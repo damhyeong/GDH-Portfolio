@@ -1,0 +1,20 @@
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: auto;
+
+  background-color: #f8f9fa; // 배경색
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // 상단에 그림자 효과
+  padding: 1rem; // 안쪽 여백
+
+  .logo{
+    float: left;
+  }
+
+  .navigation{
+    float: right;
+  }
+}
