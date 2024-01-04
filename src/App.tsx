@@ -6,14 +6,14 @@ import Main from "./component/Main/Main";
 function App() {
   return (
     <div className="App">
-      <header className={"header"}>
+      <div className={"header"}>
         <div className={"logo"}>logo</div>
-        <div className={"navigation"}>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
+        <div className={"navi"}>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
         </div>
-      </header>
+      </div>
       <Main/>
     </div>
   );

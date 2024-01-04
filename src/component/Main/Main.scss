@@ -1,0 +1,21 @@
+.main-component{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .first{
+    display: flex;
+    background-color: skyblue;
+    height: 100vh;
+  }
+  .second{
+    display: flex;
+    background-color: lightgreen;
+    height: 100vh;
+  }
+  .third{
+    display: flex;
+    background-color: lightcoral;
+    height: 100vh;
+  }
+}
