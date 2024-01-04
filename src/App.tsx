@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import Main from "./component/Main/Main";
+import Introduce from "./component/Introduce/Introduce";
 
 function App() {
   return (
@@ -14,7 +15,12 @@ function App() {
             <div>3</div>
         </div>
       </div>
-      <Main/>
+        <div>
+            <Main/>
+        </div>
+        <div>
+            <Introduce/>
+        </div>
     </div>
   );
 }

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.introduce-component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+
+  hr{
+    width : 80%
+
+  }
+
+  .meeting-world-by-code{
+    display: flex;
+    font-family: 'Satisfy', cursive;
+    font-size: 3rem;
+  }
+}
