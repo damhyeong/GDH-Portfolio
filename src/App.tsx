@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import spin from './spin-face.png'
 import './App.scss';
 import Main from "./component/Main/Main";
 import Introduce from "./component/Introduce/Introduce";
