@@ -9,16 +9,15 @@ function App() {
     <div className="App">
       <div className={"header"}>
         <div className={"logo"}>Gong Dam Hyeong</div>
-        <div className={"navi"}>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-        </div>
+        <nav className={"navi"}>
+            <a href={"#Main"} className={"nav"}>Main</a>
+            <a href={"#Introduce"} className={"nav"}>Introduce</a>
+        </nav>
       </div>
-        <div id={"main"}>
+        <div id={"Main"}>
             <Main/>
         </div>
-        <div id={"introduce"}>
+        <div id={"Introduce"}>
             <Introduce/>
         </div>
     </div>
