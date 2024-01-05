@@ -7,6 +7,7 @@ const Introduce = () => {
             <hr/>
             <div className={"meeting-world-by-code"}>
                 세상을 프로그램으로 풀이합니다.
+                asdf
             </div>
         </div>
     )
