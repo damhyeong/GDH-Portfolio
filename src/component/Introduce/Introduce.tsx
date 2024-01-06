@@ -1,13 +1,16 @@
 import React from "react";
 import "./Introduce.scss";
+import AboutMe from "../AboutMe/AboutMe";
 
 const Introduce = () => {
     return (
         <div className={"introduce-component"}>
+            <div className={"introduce-title"}>
+                Introduce About Me
+            </div>
             <hr/>
-            <div className={"meeting-world-by-code"}>
-                세상을 프로그램으로 풀이합니다.
-                asdf
+            <div className={"introduce-information"}>
+                <AboutMe/>
             </div>
         </div>
     )
