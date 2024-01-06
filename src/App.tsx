@@ -6,6 +6,7 @@ import Main from "./component/Main/Main";
 import Introduce from "./component/Introduce/Introduce";
 
 function App() {
+
   return (
     <div className="App">
       <div className={"header"}>
