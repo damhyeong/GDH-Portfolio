@@ -38,10 +38,10 @@ const Main: React.FC = () => {
             </div>
             <div className={`hello-world-korean ${isVisible ? "fade-in" : "fade-out"}`}>
                 <div className={`korean-text-1 ${isVisible ? "fade-in" : "fade-out"}`}>
-                    다양한 세상과 코드의 만남.
+                    세상과 직접 부딪혀 얻은 지혜를
                 </div>
                 <div className={`korean-text-2 ${isVisible ? "fade-in" : "fade-out"}`}>
-                    코드로 세상을 재해석합니다.
+                    코드로서 풀이하고자 노력합니다.
                 </div>
             </div>
         </div>

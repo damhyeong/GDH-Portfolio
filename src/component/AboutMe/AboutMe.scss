@@ -1,14 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
 .about-me-component{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 3rem;
 
-  .about-line{
+  width: 70rem;
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .column-line{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    background-color: gray;
 
-    width: 70rem;
+    .info-cell{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 3rem;
+
+      .info-logo{
+        font-size: 3rem;
+      }
+      .info-title{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        padding-bottom: 1rem;
+        color: #444;
+      }
+      .info-text{
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+    }
   }
 }
