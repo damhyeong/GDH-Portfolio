@@ -1,0 +1,14 @@
+.about-me-component{
+  display: flex;
+  flex-direction: column;
+
+  .about-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+
+    width: 70rem;
+  }
+}
