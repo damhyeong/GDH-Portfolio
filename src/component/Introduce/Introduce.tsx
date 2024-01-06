@@ -6,7 +6,7 @@ const Introduce = () => {
     return (
         <div className={"introduce-component"}>
             <div className={"introduce-title"}>
-                Introduce About Me
+                Basic Information
             </div>
             <hr/>
             <div className={"introduce-information"}>
