@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import './App.scss';
 import Main from "./component/Main/Main";
 import Introduce from "./component/Introduce/Introduce";
+import SkillSet from "./component/SkillSet/SkillSet";
 
 function App() {
     const [isTop, setIsTop] = useState<boolean>(true);
@@ -35,6 +36,9 @@ function App() {
         </div>
         <div id={"Introduce"}>
             <Introduce/>
+        </div>
+        <div id={"SkillSet"}>
+            <SkillSet/>
         </div>
     </div>
   );

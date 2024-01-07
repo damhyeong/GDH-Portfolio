@@ -1,0 +1,27 @@
+$base-color : white;
+$back-color : #222222;
+
+.skill-set-component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+
+  background: $back-color;
+
+  color : $base-color;
+
+  .skill-set{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .skill-set-title{
+      font-size: 4rem;
+    }
+    hr{
+      width: 20rem;
+    }
+  }
+}
