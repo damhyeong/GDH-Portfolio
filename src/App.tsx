@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import './App.scss';
 import Main from "./component/Main/Main";
 import Introduce from "./component/Introduce/Introduce";
+import SkillSet from "./component/SkillSet/SkillSet";
 
 function App() {
     const [isTop, setIsTop] = useState<boolean>(true);
@@ -28,6 +29,7 @@ function App() {
         <nav className={"navi"}>
             <a href={"#Main"} className={"nav"}>Main</a>
             <a href={"#Introduce"} className={"nav"}>Introduce</a>
+            <a href={"#SkillSet"} className={"nav"}>Skill Set</a>
         </nav>
       </div>
         <div id={"Main"}>
@@ -35,6 +37,9 @@ function App() {
         </div>
         <div id={"Introduce"}>
             <Introduce/>
+        </div>
+        <div id={"SkillSet"}>
+            <SkillSet/>
         </div>
     </div>
   );

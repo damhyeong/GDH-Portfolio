@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+$base-color : black;
+$back-color : #9adcfc;
+
+.skill-set-component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+
+  background: $back-color;
+
+  color : $base-color;
+
+  .skill-set{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .skill-set-title{
+      font-size: 4rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bolder;
+    }
+    hr{
+      width: 20rem;
+    }
+    .skill-section{
+
+    }
+  }
+}
