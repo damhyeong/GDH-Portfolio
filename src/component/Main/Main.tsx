@@ -33,10 +33,13 @@ const Main: React.FC = () => {
             <div
                 className={`hello-world ${isVisible ? "fade-in" : "fade-out"}`}
                 ref={helloWorldRef}
+                style={isVisible ? {opacity : 1} : {opacity : 0}}
             >
                 Hello, World!
             </div>
-            <div className={`hello-world-korean ${isVisible ? "fade-in" : "fade-out"}`}>
+            <div className={`hello-world-korean ${isVisible ? "fade-in" : "fade-out"}`}
+                style={isVisible ? {opacity : 1} : {opacity : 0}}
+            >
                 <div className={`korean-text-1 ${isVisible ? "fade-in" : "fade-out"}`}>
                     세상과 직접 부딪혀 얻은 지혜를
                 </div>
