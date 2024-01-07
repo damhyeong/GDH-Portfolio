@@ -13,8 +13,13 @@ const SkillSection = ({title, imgLinks} :PFace) => {
             <div className={"section-title"}>
                 {title}
             </div>
-            <div>
-                {imgLinks.map((strUrl, index) => <div>${strUrl}</div> ) }
+            <div className={"skill-line"}>
+                {imgLinks.map(
+                    (strUrl, index) =>
+                        <div className={"skill-cell"}>
+                            <img src={strUrl} height={80}/>
+                        </div>
+                )}
             </div>
         </div>
     )

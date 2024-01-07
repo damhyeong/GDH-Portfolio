@@ -1,5 +1,7 @@
-$base-color : white;
-$back-color : #222222;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+$base-color : black;
+$back-color : #9adcfc;
 
 .skill-set-component{
   display: flex;
@@ -19,9 +21,14 @@ $back-color : #222222;
 
     .skill-set-title{
       font-size: 4rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bolder;
     }
     hr{
       width: 20rem;
+    }
+    .skill-section{
+
     }
   }
 }

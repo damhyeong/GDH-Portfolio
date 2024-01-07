@@ -29,6 +29,7 @@ function App() {
         <nav className={"navi"}>
             <a href={"#Main"} className={"nav"}>Main</a>
             <a href={"#Introduce"} className={"nav"}>Introduce</a>
+            <a href={"#SkillSet"} className={"nav"}>Skill Set</a>
         </nav>
       </div>
         <div id={"Main"}>
