@@ -1,6 +1,5 @@
 import React from "react";
 import './SkillSection.scss'
-import * as url from "url";
 
 interface PFace{
     title : string;
