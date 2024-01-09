@@ -9,9 +9,14 @@ $back-color : #9adcfc;
   align-items: center;
   padding: 4rem;
 
-  background: $back-color;
+  background: $base-color;
+  color : $back-color;
+  transition-duration: 0.3s;
 
-  color : $base-color;
+  &.active{
+    background: $back-color;
+    color : $base-color;
+  }
 
   .skill-set{
     display: flex;
