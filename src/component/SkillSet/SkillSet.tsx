@@ -21,6 +21,22 @@ const SkillSet = () => {
         "/language-icons/version/Github.png",
     ].map((url) => process.env.PUBLIC_URL + url);
 
+    const editorIconUrls : string[] = [
+        "/language-icons/editor/Eclipse.png",
+        "/language-icons/editor/Figma.png",
+        "/language-icons/editor/Intellij_IDEA.png",
+        "/language-icons/editor/VSCode.png",
+    ].map((url) => process.env.PUBLIC_URL + url);
+
+    const certificateIconUrls : string[] = [
+        "/language-icons/certificate/certi-1.png",
+    ].map((url) => process.env.PUBLIC_URL + url);
+
+    const etcIconUrls : string[] = [
+        "/language-icons/etc/AWS.png",
+        "/language-icons/etc/Jira-Confluence.png",
+    ].map((url) => process.env.PUBLIC_URL + url);
+
     return (
         <div className={"skill-set-component"}>
             <div className={"skill-set"}>
@@ -35,7 +51,16 @@ const SkillSet = () => {
                     <SkillSection title={"Back-End"} imgLinks={backIconUrls}/>
                 </div>
                 <div className={"skill-section"}>
-                    <SkillSection title={"version-control"} imgLinks={versionIconUrls}/>
+                    <SkillSection title={"Version-control"} imgLinks={versionIconUrls}/>
+                </div>
+                <div className={"skill-section"}>
+                    <SkillSection title={"Editor"} imgLinks={editorIconUrls}/>
+                </div>
+                <div className={"skill-section"}>
+                    <SkillSection title={"Certificate"} imgLinks={certificateIconUrls}/>
+                </div>
+                <div className={"skill-section"}>
+                    <SkillSection title={"Etc"} imgLinks={etcIconUrls}/>
                 </div>
             </div>
         </div>
