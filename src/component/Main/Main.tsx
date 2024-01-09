@@ -1,8 +1,8 @@
-
-
 import React, { useState, useEffect, useRef } from "react";
-import background from '/clean-sky-building.jpg'
+import background from '/clean-sky-building.jpg';
+
 import "./Main.scss";
+
 
 const Main: React.FC = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -16,7 +16,7 @@ const Main: React.FC = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(callbackFunction, {
             root: null,
-            threshold: 0.8 // 10%가 보일 때 애니메이션을 트리거합니다.
+            threshold: 0.8  // 10%가 보일 때 애니메이션을 트리거합니다.
         });
 
         if (helloWorldRef.current) observer.observe(helloWorldRef.current);

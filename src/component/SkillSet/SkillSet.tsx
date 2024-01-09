@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import './SkillSet.scss'
 import SkillSection from "./SkillSection/SkillSection";
 
@@ -37,8 +37,31 @@ const SkillSet = () => {
         "/language-icons/etc/Jira-Confluence.png",
     ].map((url) => process.env.PUBLIC_URL + url);
 
+    const [isActive, setIsActive] = useState<boolean>(false);
+    const elementRef = useRef<HTMLDivElement>(null);
+
+    const handleScroll = useCallback(() => {
+        if(elementRef.current){
+            const position = elementRef.current.getBoundingClientRect();
+
+            if(position.top <= 400){
+                setIsActive(true);
+            } else {
+                setIsActive(false);
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }, []);
+
     return (
-        <div className={"skill-set-component"}>
+        <div ref={elementRef} className={`skill-set-component ${isActive ? "active" : ""}`}>
             <div className={"skill-set"}>
                 <div className={"skill-set-title"}>
                     Skill Set

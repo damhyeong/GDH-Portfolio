@@ -9,6 +9,12 @@
   background: #eee;
   color : #222;
 
+  transition: all 0.5s;
+
+  &.active{
+    background: #222;
+    color: #eee;
+  }
 
   // 20% 진입 시,
   /*
