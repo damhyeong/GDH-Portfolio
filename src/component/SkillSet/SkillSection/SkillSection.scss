@@ -4,23 +4,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding : 3rem;
   .section-title{
     padding : 2rem;
     font-size: 3rem;
   }
   .skill-line{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 
     padding: 3rem;
-    height : 7rem;
     background-color: #eee; // 임시 배경 색 -> 나중에 통일
 
     border-radius: 1rem;
 
     .skill-cell{
-      padding : 2rem;
+      padding : 1rem;
       border-radius: 1rem;
 
       transition: all 0.3s;

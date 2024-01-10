@@ -3,7 +3,10 @@ import './SkillSection.scss'
 
 interface PFace{
     title : string;
-    imgLinks : string[];
+    imgLinks : {
+        url : string;
+        height : number;
+    }[];
 }
 
 const SkillSection = ({title, imgLinks} :PFace) => {
@@ -14,9 +17,9 @@ const SkillSection = ({title, imgLinks} :PFace) => {
             </div>
             <div className={"skill-line"}>
                 {imgLinks.map(
-                    (strUrl, index) =>
+                    (urlInfo, index) =>
                         <div className={"skill-cell"}>
-                            <img src={strUrl} height={80}/>
+                            <img src={urlInfo.url} height={urlInfo.height}/>
                         </div>
                 )}
             </div>

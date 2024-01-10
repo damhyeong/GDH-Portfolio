@@ -2,40 +2,123 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import './SkillSet.scss'
 import SkillSection from "./SkillSection/SkillSection";
 
+interface iconInfo{
+    url : string;
+    height : number;
+}
+
 const SkillSet = () => {
-    const frontIconUrls : string[] = [
-        "/language-icons/front/HTML-CSS-JS-icon.png",
-        "/language-icons/front/React.png",
-        "/language-icons/front/Typescript.png",
-        "/language-icons/front/Sass.png"
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const frontIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/front/HTML-CSS-JS-icon.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/front/React.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/front/Typescript.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/front/Sass.png",
+            height : 80,
+        }
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
-    const backIconUrls : string[] = [
-        "/language-icons/back/Java.png",
-        "/language-icons/back/Spring.png",
-        "/language-icons/back/MySQL.png"
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const backIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/back/Java.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/back/Spring.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/back/MySQL.png",
+            height : 80,
+        },
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
-    const versionIconUrls : string[] = [
-        "/language-icons/version/Git.png",
-        "/language-icons/version/Github.png",
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const versionIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/version/Git.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/version/Github.png",
+            height : 80,
+        },
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
-    const editorIconUrls : string[] = [
-        "/language-icons/editor/Eclipse.png",
-        "/language-icons/editor/Figma.png",
-        "/language-icons/editor/Intellij_IDEA.png",
-        "/language-icons/editor/VSCode.png",
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const editorIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/editor/Eclipse.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/editor/Figma.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/editor/IntelliJ_IDEA.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/editor/VSCode.png",
+            height : 80,
+        },
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
-    const certificateIconUrls : string[] = [
-        "/language-icons/certificate/certi-1.png",
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const certificateIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/certificate/certi-1.png",
+            height : 80,
+        }
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
-    const etcIconUrls : string[] = [
-        "/language-icons/etc/AWS.png",
-        "/language-icons/etc/Jira-Confluence.png",
-    ].map((url) => process.env.PUBLIC_URL + url);
+    const etcIconUrls : iconInfo[] = [
+        {
+            url : "/language-icons/etc/AWS.png",
+            height : 80,
+        },
+        {
+            url : "/language-icons/etc/Jira-Confluence.png",
+            height : 80,
+        },
+    ].map((iconInfo) => {
+        return {
+            ...iconInfo,
+            url : process.env.PUBLIC_URL + iconInfo.url
+        };
+    });
 
     const [isActive, setIsActive] = useState<boolean>(false);
     const elementRef = useRef<HTMLDivElement>(null);
@@ -68,23 +151,32 @@ const SkillSet = () => {
                     Skill Set
                 </div>
                 <hr/>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Front-End"} imgLinks={frontIconUrls}/>
-                </div>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Back-End"} imgLinks={backIconUrls}/>
-                </div>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Version-control"} imgLinks={versionIconUrls}/>
-                </div>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Editor"} imgLinks={editorIconUrls}/>
-                </div>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Certificate"} imgLinks={certificateIconUrls}/>
-                </div>
-                <div className={"skill-section"}>
-                    <SkillSection title={"Etc"} imgLinks={etcIconUrls}/>
+                <div className={"skill-sections"}>
+                    <div className={"skill-section"}>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Front-End"}
+                            </div>
+                            <div className={"skill-line"}>
+                                {frontIconUrls.map(
+                                    (urlInfo, index) =>
+                                        <div className={"skill-cell"}>
+                                            <img src={urlInfo.url} height={urlInfo.height}/>
+                                        </div>
+                                )}
+                            </div>
+                        </div>
+                        <SkillSection title={"Front-End"} imgLinks={frontIconUrls}/>
+                        <SkillSection title={"Etc"} imgLinks={etcIconUrls}/>
+                    </div>
+                    <div className={"skill-section"}>
+                        <SkillSection title={"Back-End"} imgLinks={backIconUrls}/>
+                        <SkillSection title={"Version-control"} imgLinks={versionIconUrls}/>
+                    </div>
+                    <div className={"skill-section"}>
+                        <SkillSection title={"Editor"} imgLinks={editorIconUrls}/>
+                        <SkillSection title={"Certificate"} imgLinks={certificateIconUrls}/>
+                    </div>
                 </div>
             </div>
         </div>
