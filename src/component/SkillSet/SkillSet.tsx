@@ -60,6 +60,7 @@ const SkillSet = () => {
         }
     }, []);
 
+    // 뒤엎어야 함
     return (
         <div ref={elementRef} className={`skill-set-component ${isActive ? "active" : ""}`}>
             <div className={"skill-set"}>
