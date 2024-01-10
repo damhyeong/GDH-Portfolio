@@ -157,13 +157,19 @@ const SkillSet = () => {
                             <div className={"section-title"}>
                                 {"Front-End"}
                             </div>
-                            <div className={"skill-line"}>
-                                {frontIconUrls.map(
-                                    (urlInfo, index) =>
-                                        <div className={"skill-cell"}>
-                                            <img src={urlInfo.url} height={urlInfo.height}/>
-                                        </div>
-                                )}
+                            <div className={"skill-line"} style={{width : "20rem"}}>
+                                <div className={"skill-cell"}>
+                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/HTML-CSS-JS-icon.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/React.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <div className={"several-img"}>
+                                        <img src={process.env.PUBLIC_URL + "/language-icons/front/Typescript.png"} style={{width : "6rem"}}/>
+                                    </div>
+                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/Sass.png"} style={{width : "10rem"}}/>
+                                </div>
                             </div>
                         </div>
                         <SkillSection title={"Front-End"} imgLinks={frontIconUrls}/>

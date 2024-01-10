@@ -63,10 +63,18 @@ $back-color : #9adcfc;
     border-radius: 1rem;
 
     .skill-cell{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       padding : 1rem;
       border-radius: 1rem;
 
       transition: all 0.3s;
+
+      .several-img{
+        padding: 1rem;
+      }
 
       &:hover{
         box-shadow: gray 2px 2px 10px;
