@@ -16,6 +16,14 @@
     color: #eee;
   }
 
+  .project-wrapper{
+    .watch-effect-wrapper{
+      img{
+        transition: opacity 0.3s;
+      }
+    }
+  }
+
   // 20% 진입 시,
   /*
   background: #222222;
