@@ -32,8 +32,54 @@ $back-color : #9adcfc;
     hr{
       width: 20rem;
     }
-    .skill-section{
+    .skill-sections{
+      display: flex;
+      flex-direction: row;
+      .skill-section{
 
+      }
+    }
+  }
+}
+
+.skill-section-component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding : 3rem;
+  .section-title{
+    padding : 2rem;
+    font-size: 3rem;
+  }
+  .skill-line{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    padding: 3rem;
+    background-color: #eee; // 임시 배경 색 -> 나중에 통일
+
+    border-radius: 1rem;
+
+    .skill-cell{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding : 1rem;
+      border-radius: 1rem;
+
+      transition: all 0.3s;
+
+      .icon-img{
+        padding: 0.5rem;
+      }
+
+      &:hover{
+        box-shadow: gray 2px 2px 10px;
+        margin: 1rem;
+      }
     }
   }
 }
