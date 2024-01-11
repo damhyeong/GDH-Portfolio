@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import './SkillSet.scss'
-import SkillSection from "./SkillSection/SkillSection";
+// import SkillSection from "./SkillSection/SkillSection";
 
 interface iconInfo{
     url : string;
@@ -134,9 +134,6 @@ const SkillSet = () => {
     const skillLineStyle = {
         width : "20rem",
     }
-    const skillImgWidth = {
-        width : "18rem"
-    }
 
     const handleScroll = useCallback(() => {
         if(elementRef.current){
@@ -174,17 +171,17 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/front/HTML-CSS-JS-icon.png"} style={{width : "17rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/front/HTML-CSS-JS-icon.png"} style={{width : "17rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/front/React.png"} style={{width : "17rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/front/React.png"} style={{width : "17rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
                                     <div className={"icon-img"}>
-                                        <img src={publicUrl + "/language-icons/front/Typescript.png"} style={{width : "7rem"}}/>
+                                        <img alt={"skill"} src={publicUrl + "/language-icons/front/Typescript.png"} style={{width : "7rem"}}/>
                                     </div>
                                     <div className={"icon-img"}>
-                                        <img src={publicUrl + "/language-icons/front/Sass.png"} style={{width : "10rem"}}/>
+                                        <img alt={"skill"} src={publicUrl + "/language-icons/front/Sass.png"} style={{width : "10rem"}}/>
                                     </div>
                                 </div>
                             </div>
@@ -195,13 +192,13 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/etc/AWS.png"} style={{width : "18rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/etc/AWS.png"} style={{width : "18rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/etc/Jira.png"} style={{width : "10rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/etc/Jira.png"} style={{width : "10rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/etc/Confluence.png"} style={{width : "18rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/etc/Confluence.png"} style={{width : "18rem"}}/>
                                 </div>
                             </div>
                         </div>
@@ -213,14 +210,14 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/back/Spring.png"} style={{width : "18rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/back/Spring.png"} style={{width : "18rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
                                     <div className={"icon-img"}>
-                                        <img src={publicUrl + "/language-icons/back/Java.png"} style={{width : "8rem"}}/>
+                                        <img alt={"skill"} src={publicUrl + "/language-icons/back/Java.png"} style={{width : "8rem"}}/>
                                     </div>
                                     <div>
-                                        <img src={publicUrl + "/language-icons/back/MySQL.png"} style={{width : "10rem"}}/>
+                                        <img alt={"skill"} src={publicUrl + "/language-icons/back/MySQL.png"} style={{width : "10rem"}}/>
                                     </div>
                                 </div>
                             </div>
@@ -231,10 +228,23 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/version/Git.png"} style={{width : "12rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/version/Git.png"} style={{width : "12rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/version/Github.png"} style={{width : "12rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/version/Github.png"} style={{width : "12rem"}}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Mobile"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/mobile/Swift.png"} style={{width : "15rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/mobile/WatchOs.png"} style={{width : "17rem"}}/>
                                 </div>
                             </div>
                         </div>
@@ -246,19 +256,19 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/Eclipse.png"} style={{width : "16rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/editor/Eclipse.png"} style={{width : "16rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/Figma.png"} style={{width : "15rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/editor/Figma.png"} style={{width : "15rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/IntelliJ_IDEA.png"} style={{width : "18rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/editor/IntelliJ_IDEA.png"} style={{width : "18rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/VSCode.png"} style={{width : "19rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/editor/VSCode.png"} style={{width : "19rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/XCode.png"} style={{width : "15rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/editor/XCode.png"} style={{width : "15rem"}}/>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +278,7 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/certificate/certi-1.png"} style={{width : "18rem"}}/>
+                                    <img alt={"skill"} src={publicUrl + "/language-icons/certificate/certi-1.png"} style={{width : "18rem"}}/>
                                 </div>
                             </div>
                         </div>

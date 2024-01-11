@@ -1,6 +1,7 @@
 import React from "react";
 import './SkillSection.scss'
 
+/*
 interface PFace{
     title : string;
     imgLinks : {
@@ -27,3 +28,4 @@ const SkillSection = ({title, imgLinks} :PFace) => {
     )
 }
 export default SkillSection;
+*/
