@@ -85,6 +85,10 @@ const SkillSet = () => {
             url : "/language-icons/editor/VSCode.png",
             height : 80,
         },
+        {
+            url : "/language-icons/editor/XCode.png",
+            height : 80,
+        }
     ].map((iconInfo) => {
         return {
             ...iconInfo,
@@ -110,9 +114,13 @@ const SkillSet = () => {
             height : 80,
         },
         {
-            url : "/language-icons/etc/Jira-Confluence.png",
+            url : "/language-icons/etc/Jira.png",
             height : 80,
         },
+        {
+            url : "/language-icons/etc/Confluence.png",
+            height : 80,
+        }
     ].map((iconInfo) => {
         return {
             ...iconInfo,
@@ -122,6 +130,13 @@ const SkillSet = () => {
 
     const [isActive, setIsActive] = useState<boolean>(false);
     const elementRef = useRef<HTMLDivElement>(null);
+    const publicUrl = process.env.PUBLIC_URL;
+    const skillLineStyle = {
+        width : "20rem",
+    }
+    const skillImgWidth = {
+        width : "18rem"
+    }
 
     const handleScroll = useCallback(() => {
         if(elementRef.current){
@@ -157,31 +172,106 @@ const SkillSet = () => {
                             <div className={"section-title"}>
                                 {"Front-End"}
                             </div>
-                            <div className={"skill-line"} style={{width : "20rem"}}>
+                            <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/HTML-CSS-JS-icon.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/front/HTML-CSS-JS-icon.png"} style={{width : "17rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/React.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/front/React.png"} style={{width : "17rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <div className={"several-img"}>
-                                        <img src={process.env.PUBLIC_URL + "/language-icons/front/Typescript.png"} style={{width : "6rem"}}/>
+                                    <div className={"icon-img"}>
+                                        <img src={publicUrl + "/language-icons/front/Typescript.png"} style={{width : "7rem"}}/>
                                     </div>
-                                    <img src={process.env.PUBLIC_URL + "/language-icons/front/Sass.png"} style={{width : "10rem"}}/>
+                                    <div className={"icon-img"}>
+                                        <img src={publicUrl + "/language-icons/front/Sass.png"} style={{width : "10rem"}}/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <SkillSection title={"Front-End"} imgLinks={frontIconUrls}/>
-                        <SkillSection title={"Etc"} imgLinks={etcIconUrls}/>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Etc"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/etc/AWS.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/etc/Jira.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/etc/Confluence.png"} style={{width : "18rem"}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className={"skill-section"}>
-                        <SkillSection title={"Back-End"} imgLinks={backIconUrls}/>
-                        <SkillSection title={"Version-control"} imgLinks={versionIconUrls}/>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Back-End"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/back/Spring.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <div className={"icon-img"}>
+                                        <img src={publicUrl + "/language-icons/back/Java.png"} style={{width : "8rem"}}/>
+                                    </div>
+                                    <div>
+                                        <img src={publicUrl + "/language-icons/back/MySQL.png"} style={{width : "10rem"}}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Ver-Control"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/version/Git.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/version/Github.png"} style={{width : "18rem"}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className={"skill-section"}>
-                        <SkillSection title={"Editor"} imgLinks={editorIconUrls}/>
-                        <SkillSection title={"Certificate"} imgLinks={certificateIconUrls}/>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Editor"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/editor/Eclipse.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/editor/Figma.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/editor/IntelliJ_IDEA.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/editor/VSCode.png"} style={{width : "18rem"}}/>
+                                </div>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/editor/XCode.png"} style={{width : "18rem"}}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={"skill-section-component"}>
+                            <div className={"section-title"}>
+                                {"Editor"}
+                            </div>
+                            <div className={"skill-line"} style={skillLineStyle}>
+                                <div className={"skill-cell"}>
+                                    <img src={publicUrl + "/language-icons/certificate/certi-1.png"} style={{width : "18rem"}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -55,6 +55,7 @@ $back-color : #9adcfc;
   .skill-line{
     display: flex;
     flex-direction: column;
+    justify-content: start;
     align-items: center;
 
     padding: 3rem;
@@ -65,15 +66,14 @@ $back-color : #9adcfc;
     .skill-cell{
       display: flex;
       flex-direction: row;
-      justify-content: center;
       align-items: center;
       padding : 1rem;
       border-radius: 1rem;
 
       transition: all 0.3s;
 
-      .several-img{
-        padding: 1rem;
+      .icon-img{
+        padding: 0.5rem;
       }
 
       &:hover{
