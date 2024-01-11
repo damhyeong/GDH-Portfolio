@@ -36,7 +36,8 @@ $back-color : #9adcfc;
       display: flex;
       flex-direction: row;
       .skill-section{
-
+        display: flex;
+        flex-direction: column;
       }
     }
   }
@@ -55,7 +56,6 @@ $back-color : #9adcfc;
   .skill-line{
     display: flex;
     flex-direction: column;
-    justify-content: start;
     align-items: center;
 
     padding: 3rem;
