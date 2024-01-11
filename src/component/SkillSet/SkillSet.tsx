@@ -198,7 +198,7 @@ const SkillSet = () => {
                                     <img src={publicUrl + "/language-icons/etc/AWS.png"} style={{width : "18rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/etc/Jira.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/etc/Jira.png"} style={{width : "10rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
                                     <img src={publicUrl + "/language-icons/etc/Confluence.png"} style={{width : "18rem"}}/>
@@ -231,10 +231,10 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/version/Git.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/version/Git.png"} style={{width : "12rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/version/Github.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/version/Github.png"} style={{width : "12rem"}}/>
                                 </div>
                             </div>
                         </div>
@@ -246,19 +246,19 @@ const SkillSet = () => {
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/Eclipse.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/editor/Eclipse.png"} style={{width : "16rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/Figma.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/editor/Figma.png"} style={{width : "15rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
                                     <img src={publicUrl + "/language-icons/editor/IntelliJ_IDEA.png"} style={{width : "18rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/VSCode.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/editor/VSCode.png"} style={{width : "19rem"}}/>
                                 </div>
                                 <div className={"skill-cell"}>
-                                    <img src={publicUrl + "/language-icons/editor/XCode.png"} style={{width : "18rem"}}/>
+                                    <img src={publicUrl + "/language-icons/editor/XCode.png"} style={{width : "15rem"}}/>
                                 </div>
                             </div>
                         </div>
