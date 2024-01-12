@@ -23,6 +23,11 @@ const Project = () => {
         }
     }, []);
 
+    const gifClick = useCallback(() => {
+        setDisplayWatch(!displayWatch);
+        console.log(displayWatch);
+    }, [displayWatch]);
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
@@ -38,7 +43,9 @@ const Project = () => {
                     <img
                         src={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
-                        style={displayWatch ? {opacity : 0} : {opacity : 1}}/>
+                        style={displayWatch ? {opacity : 0} : {opacity : 1}}
+                        onClick={gifClick}
+                    />
                 </div>
                 <div className={"watch-effect-introduce"}>
 
