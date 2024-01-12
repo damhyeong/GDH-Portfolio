@@ -7,6 +7,7 @@ const Project = () => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const elementRef = useRef<HTMLDivElement>(null);
     const [displayWatch, setDisplayWatch] = useState<boolean>(true);
+    const [isStopGif, setIsStopGif] = useState<boolean>(true);
 
 
     const handleScroll = useCallback(() => {
@@ -24,9 +25,9 @@ const Project = () => {
     }, []);
 
     const gifClick = useCallback(() => {
-        setDisplayWatch(!displayWatch);
-        console.log(displayWatch);
-    }, [displayWatch]);
+        setIsStopGif(!isStopGif);
+        console.log(isStopGif);
+    }, [isStopGif]);
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -41,14 +42,14 @@ const Project = () => {
             <div className={"project-wrapper"}>
                 <div className={"watch-effect-wrapper"}>
                     <img
-                        src={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
+                        src={process.env.PUBLIC_URL + (isStopGif ? "/gif/watch-effect.png" : "/gif/watch-effect.gif")}
                         alt={"Watch-Effect"}
                         style={displayWatch ? {opacity : 0} : {opacity : 1}}
                         onClick={gifClick}
                     />
                 </div>
                 <div className={"watch-effect-introduce"}>
-
+                    a
                 </div>
             </div>
         </div>
