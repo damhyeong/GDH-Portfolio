@@ -1,4 +1,6 @@
 import React, {useCallback, useState} from "react";
+import { FaRegPlayCircle } from "react-icons/fa";
+
 import './GifPlayer.scss';
 
 interface PFace{
@@ -19,12 +21,21 @@ const GifPlayer = (Props : PFace) => {
     }, [isStopGif]);
 
     return (
-        <div className={"gif-player-component"}>
+        <div className={`gif-player-component ${isStopGif ? "stop-gif" : "run-gif"}`}>
             <img
+                className={"gif-image"}
                 src={isStopGif ? stopImg : startImg}
                 alt={alt}
                 onClick={gifClick}
             />
+            {
+                // isStopGif &&
+                <FaRegPlayCircle
+                    className={"play-icon"}
+                    onClick={gifClick}
+                    style={isStopGif ? {opacity : "1"} : {opacity : "0"}}
+                />
+            }
         </div>
     )
 }
