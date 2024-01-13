@@ -40,18 +40,19 @@ const Project = () => {
 
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
-            <div className={"project-wrapper"}>
-                <div className={"watch-effect-wrapper"} style={displayWatch ? {opacity : 0} : {opacity : 1}}>
+            <div className={`project-wrapper`}>
+                <div className={`watch-effect-wrapper ${isActive ? "active" : ""}`}>
                     <GifPlayer
                         stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
                         startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
                     />
                 </div>
-                <div className={"watch-effect-introduce"}>
+                <div className={`watch-effect-introduce ${isActive ? "active" : ""}`}>
                     <div className={"title-section"}>
                         Vibe-Flash
                     </div>
+                    <hr/>
                     <div className={"introduce-section"}>
                         <b>Swift와 WatchOs를 사용해 만든 어플리케이션입니다.</b><br/><br/>
                         애플워치의 정적 배경화면은 사용자의 스타일을 표현하기 위한 좋은 악세사리입니다.<br/><br/>

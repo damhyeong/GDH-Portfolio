@@ -9,7 +9,7 @@
   background: #eee;
   color : #222;
 
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   &.active{
     background: #222;
@@ -24,6 +24,16 @@
     width: 70%;
     .watch-effect-wrapper{ // gif player 부분
       width: 35rem;
+      opacity: 0;
+      transform: translateX(-10rem);
+
+      transition: opacity 0.5s ease-in, transform 0.5s ease;
+
+
+      &.active{
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     .watch-effect-introduce{ // 프로젝트 설명 부분
       display: flex;
@@ -32,9 +42,26 @@
 
       align-items: center;
       padding-left: 7rem;
+
+      opacity: 0;
+      transform: translateX(10rem);
+      transition-delay: 1s;
+      transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+
+      &.active{
+        opacity: 1;
+        transform: translateX(0);
+      }
+
       .title-section{
         font-size: 5rem;
       }
+
+      hr{
+        width: 100%;
+        line-height: 4px;
+      }
+
       .introduce-section{
         font-size: 1.5rem;
       }
