@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import './Project.scss'
+import GifPlayer from "../GifPlayer/GifPlayer";
 
 const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
@@ -40,12 +41,11 @@ const Project = () => {
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
             <div className={"project-wrapper"}>
-                <div className={"watch-effect-wrapper"}>
-                    <img
-                        src={process.env.PUBLIC_URL + (isStopGif ? "/gif/watch-effect.png" : "/gif/watch-effect.gif")}
+                <div className={"watch-effect-wrapper"} style={displayWatch ? {opacity : 0} : {opacity : 1}}>
+                    <GifPlayer
+                        stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
+                        startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
-                        style={displayWatch ? {opacity : 0} : {opacity : 1}}
-                        onClick={gifClick}
                     />
                 </div>
                 <div className={"watch-effect-introduce"}>
