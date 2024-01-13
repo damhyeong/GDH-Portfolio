@@ -1,0 +1,36 @@
+.gif-player-component{
+  display: flex;
+  position : relative;
+  cursor: pointer;
+
+  transition: all 0.3s;
+  width: 100%;
+
+
+  &.stop-gif{
+
+  }
+
+  &.run-gif{
+
+  }
+
+  .gif-image{
+    display: block;
+    width: 100%;
+
+    border-radius: 2rem;
+  }
+
+  .play-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font-size: 9rem;
+
+    transform: translate(-50%, -50%); // 아이콘 중앙 배치
+
+    transition: all 0.3s;
+  }
+}

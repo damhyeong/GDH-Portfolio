@@ -17,9 +17,26 @@
   }
 
   .project-wrapper{
-    .watch-effect-wrapper{
-      img{
-        transition: opacity 0.3s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 70%;
+    .watch-effect-wrapper{ // gif player 부분
+      width: 35rem;
+    }
+    .watch-effect-introduce{ // 프로젝트 설명 부분
+      display: flex;
+      flex-direction: column;
+      width: 35rem;
+
+      align-items: center;
+      padding-left: 7rem;
+      .title-section{
+        font-size: 5rem;
+      }
+      .introduce-section{
+        font-size: 1.5rem;
       }
     }
   }

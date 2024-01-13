@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import './Project.scss'
+import GifPlayer from "../GifPlayer/GifPlayer";
 
 const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
@@ -40,16 +41,31 @@ const Project = () => {
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
             <div className={"project-wrapper"}>
-                <div className={"watch-effect-wrapper"}>
-                    <img
-                        src={process.env.PUBLIC_URL + (isStopGif ? "/gif/watch-effect.png" : "/gif/watch-effect.gif")}
+                <div className={"watch-effect-wrapper"} style={displayWatch ? {opacity : 0} : {opacity : 1}}>
+                    <GifPlayer
+                        stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
+                        startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
-                        style={displayWatch ? {opacity : 0} : {opacity : 1}}
-                        onClick={gifClick}
                     />
                 </div>
                 <div className={"watch-effect-introduce"}>
-                    a
+                    <div className={"title-section"}>
+                        Vibe-Flash
+                    </div>
+                    <div className={"introduce-section"}>
+                        <b>Swift와 WatchOs를 사용해 만든 어플리케이션입니다.</b><br/><br/>
+                        애플워치의 정적 배경화면은 사용자의 스타일을 표현하기 위한 좋은 악세사리입니다.<br/><br/>
+
+                        헬스 케어, 알람, 시간 확인에 중점 된 기능 외, 자신을 표현 할 수 있는 특별한 기능이 있었으면 좋겠다 생각해서 만든 프로그램입니다.<br/><br/>
+
+                        기본적으로 탑재된 CPU, RAM 스펙이 높아 제작 가능했습니다.<br/><br/>
+
+                        "높은 스펙에 비해 낮은 배터리" 라는 한계를 가지고 있기 때문에, IOS에 비해 WatchOS가 사용 할 수 있는 기본 라이브러리는 적었습니다.<br/><br/>
+
+                        이를 극복하기 위해 SKScene, vDSP 라이브러리를 사용하여 애플워치에 사운드 반응형 어플리케이션을 제작 할 수 있었습니다.<br/><br/>
+
+                        vDSP 기능을 통해 Low Level 수준의 계산을 실행하여 계산량을 줄였으며, SKScene을 통해 그림을 그리는 것이 불가능했던 WatchOS의 한계를 없앴습니다.<br/>
+                    </div>
                 </div>
             </div>
         </div>
