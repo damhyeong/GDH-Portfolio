@@ -30,6 +30,7 @@ const Project = () => {
         console.log(isStopGif);
     }, [isStopGif]);
 
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
@@ -41,14 +42,14 @@ const Project = () => {
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
             <div className={`project-wrapper`}>
-                <div className={`watch-effect-wrapper ${isActive ? "active" : ""}`}>
+                <div className={`project-view-src ${isActive ? "active" : ""}`}>
                     <GifPlayer
                         stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
                         startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
                     />
                 </div>
-                <div className={`watch-effect-introduce ${isActive ? "active" : ""}`}>
+                <div className={`project-introduce ${isActive ? "active" : ""}`} style={{width : "40rem"}}>
                     <div className={"title-section"}>
                         Vibe-Flash
                     </div>
@@ -66,6 +67,23 @@ const Project = () => {
                         이를 극복하기 위해 SKScene, vDSP 라이브러리를 사용하여 애플워치에 사운드 반응형 어플리케이션을 제작 할 수 있었습니다.<br/><br/>
 
                         vDSP 기능을 통해 Low Level 수준의 계산을 실행하여 계산량을 줄였으며, SKScene을 통해 그림을 그리는 것이 불가능했던 WatchOS의 한계를 없앴습니다.<br/>
+                    </div>
+                </div>
+            </div>
+            <div className={"project-wrapper"}>
+                <div className={`project-view-src ${isActive ? "active" : ""}`} style={{width : "45rem"}}>
+                    <img
+                        className={"coupang-mail"}
+                        src={process.env.PUBLIC_URL + "/project-src/coupang-mail.png"}
+                    />
+                </div>
+                <div className={`project-introduce ${isActive ? "active" : ""}`}>
+                    <div className={"title-section"} style={{fontSize : "4rem"}}>
+                        기업의 보안 미비성 수정 제안
+                    </div>
+                    <hr/>
+                    <div className={"introduce-section"}>
+                        introduce-section
                     </div>
                 </div>
             </div>

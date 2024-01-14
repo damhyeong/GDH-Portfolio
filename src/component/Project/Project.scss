@@ -1,10 +1,10 @@
 .project-component{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3rem;
 
-  height: 100vh;
 
   background: #eee;
   color : #222;
@@ -22,7 +22,9 @@
     align-items: center;
 
     width: 70%;
-    .watch-effect-wrapper{ // gif player 부분
+    height: 100vh;
+    .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
+      display: flex;
       width: 35rem;
       opacity: 0;
       transform: translateX(-10rem);
@@ -34,11 +36,18 @@
         opacity: 1;
         transform: translateX(0);
       }
+
+      .coupang-mail{
+        width: 100%;
+        opacity: 0.9;
+        border-radius: 2rem;
+        box-shadow: 0.2rem 0.2rem 1rem;
+      }
+
     }
-    .watch-effect-introduce{ // 프로젝트 설명 부분
+    .project-introduce{ // 프로젝트 설명 부분
       display: flex;
       flex-direction: column;
-      width: 35rem;
 
       align-items: center;
       padding-left: 7rem;
@@ -47,6 +56,7 @@
       transform: translateX(10rem);
       transition-delay: 1s;
       transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+
 
       &.active{
         opacity: 1;
