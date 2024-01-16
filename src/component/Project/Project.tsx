@@ -26,6 +26,41 @@ const Project = () => {
         }
     }, []);
 
+    const projectViewSrc = () => {
+        const imgViews = document.querySelectorAll(".project-view-src");
+        const imgIntros = document.querySelectorAll(".project-introduce");
+        console.log(imgViews);
+
+        const viewObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("active-move", entry.isIntersecting);
+                console.log("asdf")
+                if (entry.isIntersecting) {
+                    viewObserver.unobserve(entry.target)
+                }
+            })
+        }, {
+            threshold: 1
+        })
+        const introObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("active-move", entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    introObserver.unobserve(entry.target)
+                }
+            })
+        }, {
+            threshold: 1
+        })
+
+        imgViews.forEach(imgView => {
+            viewObserver.observe(imgView);
+        })
+        imgIntros.forEach(imgIntro => {
+            introObserver.observe(imgIntro);
+        })
+    };
+
     const gifClick = useCallback(() => {
         setIsStopGif(!isStopGif);
         console.log(isStopGif);
@@ -43,14 +78,14 @@ const Project = () => {
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
             <div className={`project-wrapper`}>
-                <div className={`project-view-src ${isActive ? "active" : ""}`}>
+                <div className={`project-view-src`}>
                     <GifPlayer
                         stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
                         startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
                     />
                 </div>
-                <div className={`project-introduce ${isActive ? "active" : ""}`} style={{width : "40rem"}}>
+                <div className={`project-introduce`} style={{width : "40rem"}}>
                     <div className={"title-section"}>
                         Vibe-Flash
                     </div>
@@ -72,13 +107,13 @@ const Project = () => {
                 </div>
             </div>
             <div className={"project-wrapper"}>
-                <div className={`project-view-src ${isActive ? "active" : ""}`} style={{width : "45rem"}}>
+                <div className={`project-view-src`}>
                     <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
                     <div className={"image-expand-icon"}>
                         <CgArrowsExpandRight />
                     </div>
                 </div>
-                <div className={`project-introduce ${isActive ? "active" : ""}`}>
+                <div className={`project-introduce`}>
                     <div className={"title-section"} style={{fontSize : "4rem"}}>
                         기업의 보안 미비성 수정 제안
                     </div>

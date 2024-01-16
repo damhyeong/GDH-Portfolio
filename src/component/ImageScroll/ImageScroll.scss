@@ -1,6 +1,6 @@
 
-$image-width : 35rem;
-$image-height : 23rem;
+$image-width : 45rem;
+$image-height : $image-width * (6 / 9);
 
 .image-scroll-component{
   width: $image-width;

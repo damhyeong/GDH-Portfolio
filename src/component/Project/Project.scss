@@ -21,13 +21,13 @@
     flex-direction: row;
     align-items: center;
 
-    width: 80rem;
+    width: 100rem;
     height: 80rem;
     .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 35rem;
+      width: 45rem;
 
       opacity: 0;
       transform: translateX(-10rem);
@@ -35,7 +35,7 @@
       transition: opacity 0.5s ease-in, transform 0.5s ease;
 
 
-      &.active{
+      &.active-move{
         opacity: 1;
         transform: translateX(0);
       }
@@ -58,7 +58,7 @@
       transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
 
 
-      &.active{
+      &.active-move{
         opacity: 1;
         transform: translateX(0);
       }
