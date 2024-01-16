@@ -1,0 +1,72 @@
+
+$image-width : 35rem;
+$image-height : 23rem;
+
+.image-scroll-component{
+  width: $image-width;
+  height: $image-height;
+
+
+  .image-view{
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 2rem;
+    box-shadow: 0.2rem 0.2rem 1rem;
+  }
+
+  .image-scroller{
+    width: inherit;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    // top : 12rem;
+    top : $image-height / 2;
+    color: #222222;
+
+    font-size: 2rem;
+    .image-pre{
+      display: flex;
+      padding: 1rem;
+
+      background: #555555;
+      opacity: 0.8;
+
+      border-radius: 1rem;
+    }
+    .image-next{
+      display: flex;
+      padding: 1rem;
+
+      background: #555555;
+      opacity: 0.8;
+
+      border-radius: 1rem;
+    }
+  }
+
+  .image-scroll-num{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    color: #222222;
+    top: $image-height - ($image-height / 10rem);
+    left: $image-width / 2;
+
+    font-size: ($image-height / 15);
+
+
+    transition: all 0.3s;
+    .current-img-number{
+
+    }
+    .slash{
+
+    }
+    .last-img-number{
+
+    }
+  }
+}

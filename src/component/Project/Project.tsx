@@ -1,6 +1,8 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
+import {CgArrowsExpandRight} from "react-icons/cg";
 import './Project.scss'
 import GifPlayer from "../GifPlayer/GifPlayer";
+import ImageScroll from "../ImageScroll/ImageScroll";
 
 const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
@@ -9,7 +11,6 @@ const Project = () => {
     const elementRef = useRef<HTMLDivElement>(null);
     const [displayWatch, setDisplayWatch] = useState<boolean>(true);
     const [isStopGif, setIsStopGif] = useState<boolean>(true);
-
 
     const handleScroll = useCallback(() => {
         if(elementRef.current){
@@ -72,10 +73,10 @@ const Project = () => {
             </div>
             <div className={"project-wrapper"}>
                 <div className={`project-view-src ${isActive ? "active" : ""}`} style={{width : "45rem"}}>
-                    <img
-                        className={"coupang-mail"}
-                        src={process.env.PUBLIC_URL + "/project-src/coupang-mail.png"}
-                    />
+                    <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
+                    <div className={"image-expand-icon"}>
+                        <CgArrowsExpandRight />
+                    </div>
                 </div>
                 <div className={`project-introduce ${isActive ? "active" : ""}`}>
                     <div className={"title-section"} style={{fontSize : "4rem"}}>
