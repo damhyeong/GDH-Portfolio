@@ -1,15 +1,18 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
+import {CgArrowsExpandRight, CgCompressRight} from "react-icons/cg";
 import './Project.scss'
 import GifPlayer from "../GifPlayer/GifPlayer";
+import ImageScroll from "../ImageScroll/ImageScroll";
+import ExpandImageScroll from "../ExpandImageScroll/ExpandImageScroll";
 
 const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
     /** 웹 페이지에 들어온 사용자가 본격적으로 Project 컴포넌트에 진입했음을 알린다. */
     const [isActive, setIsActive] = useState<boolean>(false);
+    /** project 단에 들어올 시, 배경색을 #222로 바꾸기 위함. */
     const elementRef = useRef<HTMLDivElement>(null);
-    const [displayWatch, setDisplayWatch] = useState<boolean>(true);
     const [isStopGif, setIsStopGif] = useState<boolean>(true);
-
+    const [isExpandCoupang, setIsExpandCoupang] = useState<boolean>(false);
 
     const handleScroll = useCallback(() => {
         if(elementRef.current){
@@ -17,12 +20,38 @@ const Project = () => {
 
             if(position.top <= 400){
                 setIsActive(true);
-                setDisplayWatch(false);
             } else {
                 setIsActive(false);
-                setDisplayWatch(true);
             }
         }
+    }, []);
+
+    useEffect(() => {
+        /** project-view-src, project-introduce 클래스 이름을 가진 영역은 다른 animation 효과를 가진다.  */
+        const imgViews = document.querySelectorAll(".project-view-src");
+        const imgIntros = document.querySelectorAll(".project-introduce");
+
+        const viewObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("active-move", entry.isIntersecting);
+            })
+        }, {
+            threshold: 0.5
+        })
+        const introObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("active-move", entry.isIntersecting);
+            })
+        }, {
+            threshold: 0.5
+        })
+
+        imgViews.forEach(imgView => {
+            viewObserver.observe(imgView);
+        })
+        imgIntros.forEach(imgIntro => {
+            introObserver.observe(imgIntro);
+        })
     }, []);
 
     const gifClick = useCallback(() => {
@@ -42,14 +71,14 @@ const Project = () => {
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
             <div className={`project-wrapper`}>
-                <div className={`project-view-src ${isActive ? "active" : ""}`}>
+                <div className={`project-view-src`}>
                     <GifPlayer
                         stopImg={process.env.PUBLIC_URL + "/gif/watch-effect.png"}
                         startImg={process.env.PUBLIC_URL + "/gif/watch-effect.gif"}
                         alt={"Watch-Effect"}
                     />
                 </div>
-                <div className={`project-introduce ${isActive ? "active" : ""}`} style={{width : "40rem"}}>
+                <div className={`project-introduce`} style={{width : "40rem"}}>
                     <div className={"title-section"}>
                         Vibe-Flash
                     </div>
@@ -71,13 +100,18 @@ const Project = () => {
                 </div>
             </div>
             <div className={"project-wrapper"}>
-                <div className={`project-view-src ${isActive ? "active" : ""}`} style={{width : "45rem"}}>
-                    <img
-                        className={"coupang-mail"}
-                        src={process.env.PUBLIC_URL + "/project-src/coupang-mail.png"}
-                    />
+                <div className={`project-view-src`}>
+                    <div className={`image-viewer ${isExpandCoupang ? "expand" : ""}`}>
+                        <ExpandImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
+                    </div>
+                    <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
+                    <div className={"image-expand-icon"} onClick={() =>
+                    {setIsExpandCoupang(!isExpandCoupang)}
+                    }>
+                        {isExpandCoupang ? <CgCompressRight/> : <CgArrowsExpandRight/>}
+                    </div>
                 </div>
-                <div className={`project-introduce ${isActive ? "active" : ""}`}>
+                <div className={`project-introduce`}>
                     <div className={"title-section"} style={{fontSize : "4rem"}}>
                         기업의 보안 미비성 수정 제안
                     </div>

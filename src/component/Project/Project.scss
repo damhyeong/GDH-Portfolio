@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 3rem;
-
+  position: relative;
 
   background: #eee;
   color : #222;
@@ -21,27 +21,49 @@
     flex-direction: row;
     align-items: center;
 
-    width: 70%;
-    height: 100vh;
+    width: 100rem;
+    height: 80rem;
+
+    .image-viewer{
+      display: none;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      scale: 150%;
+      z-index: 1000;
+
+      transition: opacity 0.5s;
+
+      &.expand{
+        display: inherit;
+        opacity: 1;
+      }
+
+    }
+
     .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
       display: flex;
-      width: 35rem;
+      flex-direction: column;
+      align-items: center;
+      width: 45rem;
+
       opacity: 0;
       transform: translateX(-10rem);
 
       transition: opacity 0.5s ease-in, transform 0.5s ease;
 
 
-      &.active{
+      &.active-move{
         opacity: 1;
         transform: translateX(0);
+
       }
 
-      .coupang-mail{
-        width: 100%;
-        opacity: 0.9;
-        border-radius: 2rem;
-        box-shadow: 0.2rem 0.2rem 1rem;
+      .image-expand-icon{
+        font-size: 6rem;
       }
 
     }
@@ -58,7 +80,7 @@
       transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
 
 
-      &.active{
+      &.active-move{
         opacity: 1;
         transform: translateX(0);
       }

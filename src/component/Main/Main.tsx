@@ -28,7 +28,7 @@ const Main: React.FC = () => {
 
     return (
         <div className="main-component"
-             style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/clean-sky-building.jpg'})` }}
+             style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/clean-sky-building.png'})` }}
         >
             <div
                 className={`hello-world ${isVisible ? "fade-in" : "fade-out"}`}

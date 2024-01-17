@@ -1,0 +1,74 @@
+
+$image-width : 45rem;
+$image-height : $image-width * (6 / 9);
+
+.expand-image-scroll-component{
+
+
+
+  width: $image-width;
+  height: $image-height;
+
+
+  .expand-image-view{
+    width: 100%;
+    opacity: 1;
+    border-radius: 2rem;
+    box-shadow: 0.2rem 0.2rem 1rem;
+  }
+
+  .expand-image-scroller{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    // top : 12rem;
+    top : $image-height / 2;
+    color: #222222;
+
+    font-size: 2rem;
+    .expand-image-pre{
+      display: flex;
+      padding: 1rem;
+
+      background: #555555;
+      opacity: 0.8;
+
+      border-radius: 1rem;
+    }
+    .expand-image-next{
+      display: flex;
+      padding: 1rem;
+
+      background: #555555;
+      opacity: 0.8;
+
+      border-radius: 1rem;
+    }
+  }
+
+  .expand-image-scroll-num{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    color: #222222;
+    top: $image-height - ($image-height / 10rem);
+    left: $image-width / 2;
+
+    font-size: ($image-height / 15);
+
+
+    transition: all 0.3s;
+    .expand-current-img-number{
+
+    }
+    .expand-slash{
+
+    }
+    .expand-last-img-number{
+
+    }
+  }
+}
