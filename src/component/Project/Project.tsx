@@ -3,6 +3,7 @@ import {CgArrowsExpandRight, CgCompressRight} from "react-icons/cg";
 import './Project.scss'
 import GifPlayer from "../GifPlayer/GifPlayer";
 import ImageScroll from "../ImageScroll/ImageScroll";
+import ExpandImageScroll from "../ExpandImageScroll/ExpandImageScroll";
 
 const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
@@ -99,14 +100,15 @@ const Project = () => {
                 </div>
             </div>
             <div className={"project-wrapper"}>
-                <div className={`project-view-src ${isExpandCoupang ? "expand" : ""}`}>
-                    <div className={"image-viewer"}>
+                <div className={`project-view-src`}>
+                    <div className={`image-viewer ${isExpandCoupang ? "expand" : ""}`}>
+                        <ExpandImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
                     </div>
                     <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
                     <div className={"image-expand-icon"} onClick={() =>
                     {setIsExpandCoupang(!isExpandCoupang)}
                     }>
-                        { isExpandCoupang ? <CgCompressRight/> : <CgArrowsExpandRight/>}
+                        {isExpandCoupang ? <CgCompressRight/> : <CgArrowsExpandRight/>}
                     </div>
                 </div>
                 <div className={`project-introduce`}>
