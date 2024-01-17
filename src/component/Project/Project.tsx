@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
-import {CgArrowsExpandRight} from "react-icons/cg";
+import {CgArrowsExpandRight, CgCompressRight} from "react-icons/cg";
 import './Project.scss'
 import GifPlayer from "../GifPlayer/GifPlayer";
 import ImageScroll from "../ImageScroll/ImageScroll";
@@ -8,9 +8,10 @@ const Project = () => {
     const publicUrl : string = process.env.PUBLIC_URL;
     /** 웹 페이지에 들어온 사용자가 본격적으로 Project 컴포넌트에 진입했음을 알린다. */
     const [isActive, setIsActive] = useState<boolean>(false);
+    /** project 단에 들어올 시, 배경색을 #222로 바꾸기 위함. */
     const elementRef = useRef<HTMLDivElement>(null);
-    const [displayWatch, setDisplayWatch] = useState<boolean>(true);
     const [isStopGif, setIsStopGif] = useState<boolean>(true);
+    const [isExpandCoupang, setIsExpandCoupang] = useState<boolean>(false);
 
     const handleScroll = useCallback(() => {
         if(elementRef.current){
@@ -18,39 +19,30 @@ const Project = () => {
 
             if(position.top <= 400){
                 setIsActive(true);
-                setDisplayWatch(false);
             } else {
                 setIsActive(false);
-                setDisplayWatch(true);
             }
         }
     }, []);
 
-    const projectViewSrc = () => {
+    useEffect(() => {
+        /** project-view-src, project-introduce 클래스 이름을 가진 영역은 다른 animation 효과를 가진다.  */
         const imgViews = document.querySelectorAll(".project-view-src");
         const imgIntros = document.querySelectorAll(".project-introduce");
-        console.log(imgViews);
 
         const viewObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 entry.target.classList.toggle("active-move", entry.isIntersecting);
-                console.log("asdf")
-                if (entry.isIntersecting) {
-                    viewObserver.unobserve(entry.target)
-                }
             })
         }, {
-            threshold: 1
+            threshold: 0.5
         })
         const introObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 entry.target.classList.toggle("active-move", entry.isIntersecting);
-                if (entry.isIntersecting) {
-                    introObserver.unobserve(entry.target)
-                }
             })
         }, {
-            threshold: 1
+            threshold: 0.5
         })
 
         imgViews.forEach(imgView => {
@@ -59,7 +51,7 @@ const Project = () => {
         imgIntros.forEach(imgIntro => {
             introObserver.observe(imgIntro);
         })
-    };
+    }, []);
 
     const gifClick = useCallback(() => {
         setIsStopGif(!isStopGif);
@@ -107,10 +99,14 @@ const Project = () => {
                 </div>
             </div>
             <div className={"project-wrapper"}>
-                <div className={`project-view-src`}>
-                    <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
-                    <div className={"image-expand-icon"}>
-                        <CgArrowsExpandRight />
+                <div className={`project-view-src ${isExpandCoupang ? "expand" : ""}`}>
+                    <div className={"image-viewer"}>
+                        <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
+                    </div>
+                    <div className={"image-expand-icon"} onClick={() =>
+                    {setIsExpandCoupang(!isExpandCoupang)}
+                    }>
+                        { isExpandCoupang ? <CgCompressRight/> : <CgArrowsExpandRight/>}
                     </div>
                 </div>
                 <div className={`project-introduce`}>
