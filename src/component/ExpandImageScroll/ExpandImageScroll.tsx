@@ -19,6 +19,17 @@ const ExpandImageScroll = ({urls} : PIFace) => {
 
     return (
         <div className={"expand-image-scroll-component"}>
+            <div className={"expand-image-scroll-num"}>
+                <div className={"expand-current-img-number"}>
+                    {imgNum + 1}
+                </div>
+                <div className={"expand-slash"}>
+                    /
+                </div>
+                <div className={"expand-last-img-number"}>
+                    {urls.length}
+                </div>
+            </div>
             <img
                 className={"expand-image-view"}
                 src={process.env.PUBLIC_URL + urls[imgNum]}
@@ -29,17 +40,6 @@ const ExpandImageScroll = ({urls} : PIFace) => {
                 </div>
                 <div className={"expand-image-next"} onClick={imageNext}>
                     <CgArrowRight/>
-                </div>
-            </div>
-            <div className={"expand-image-scroll-num"}>
-                <div className={"expand-current-img-number"}>
-                    {imgNum + 1}
-                </div>
-                <div className={"expand-slash"}>
-                    /
-                </div>
-                <div className={"expand-last-img-number"}>
-                    {urls.length}
                 </div>
             </div>
         </div>

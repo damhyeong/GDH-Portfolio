@@ -1,14 +1,32 @@
 
-$image-width : 45rem;
+$image-width : 60rem;
 $image-height : $image-width * (6 / 9);
 
 .expand-image-scroll-component{
 
-
-
   width: $image-width;
   height: $image-height;
 
+  .expand-image-scroll-num{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #eeeeee;
+    padding-bottom: 1rem;
+
+    font-size: ($image-height / 10);
+    transition: all 0.3s;
+
+    .expand-current-img-number{
+
+    }
+    .expand-slash{
+
+    }
+    .expand-last-img-number{
+
+    }
+  }
 
   .expand-image-view{
     width: 100%;
@@ -21,11 +39,11 @@ $image-height : $image-width * (6 / 9);
     width: inherit;
     display: flex;
     flex-direction: row;
+    padding-top : 1rem;
 
     justify-content: space-between;
 
     // top : 12rem;
-    top : $image-height / 2;
     color: #222222;
 
     font-size: 2rem;
@@ -46,29 +64,6 @@ $image-height : $image-width * (6 / 9);
       opacity: 0.8;
 
       border-radius: 1rem;
-    }
-  }
-
-  .expand-image-scroll-num{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    color: #222222;
-    top: $image-height - ($image-height / 10rem);
-    left: $image-width / 2;
-
-    font-size: ($image-height / 15);
-
-
-    transition: all 0.3s;
-    .expand-current-img-number{
-
-    }
-    .expand-slash{
-
-    }
-    .expand-last-img-number{
-
     }
   }
 }

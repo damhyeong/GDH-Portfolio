@@ -100,10 +100,10 @@ const Project = () => {
                 </div>
             </div>
             <div className={"project-wrapper"}>
+                <div className={`image-viewer ${isExpandCoupang ? "expand" : ""}`}>
+                    <ExpandImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
+                </div>
                 <div className={`project-view-src`}>
-                    <div className={`image-viewer ${isExpandCoupang ? "expand" : ""}`}>
-                        <ExpandImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
-                    </div>
                     <ImageScroll urls={["/project-src/coupang-mail.png", "/project-src/coupang-price-list.png"]}/>
                     <div className={"image-expand-icon"} onClick={() =>
                     {setIsExpandCoupang(!isExpandCoupang)}
