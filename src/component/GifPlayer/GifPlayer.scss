@@ -32,5 +32,9 @@
     transform: translate(-50%, -50%); // 아이콘 중앙 배치
 
     transition: all 0.3s;
+
+    &:hover{
+      font-size: 14rem;
+    }
   }
 }

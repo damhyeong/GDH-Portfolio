@@ -1,12 +1,13 @@
 import React, {useCallback, useState} from "react";
 import './ExpandImageScroll.scss';
-import {CgArrowLeft, CgArrowRight} from "react-icons/cg";
+import {CgArrowLeft, CgArrowRight, CgClose} from "react-icons/cg";
 
 interface PIFace{
-    urls : string[]
+    urls : string[];
+    onClickClose : () => void;
 }
 
-const ExpandImageScroll = ({urls} : PIFace) => {
+const ExpandImageScroll = ({urls, onClickClose} : PIFace) => {
     const [imgNum, setImgNum] = useState<number>(0);
 
     const imagePrevious = useCallback(() => {
@@ -19,6 +20,17 @@ const ExpandImageScroll = ({urls} : PIFace) => {
 
     return (
         <div className={"expand-image-scroll-component"}>
+            <div className={"expand-image-scroll-num"}>
+                <div className={"expand-current-img-number"}>
+                    {imgNum + 1}
+                </div>
+                <div className={"expand-slash"}>
+                    /
+                </div>
+                <div className={"expand-last-img-number"}>
+                    {urls.length}
+                </div>
+            </div>
             <img
                 className={"expand-image-view"}
                 src={process.env.PUBLIC_URL + urls[imgNum]}
@@ -31,16 +43,8 @@ const ExpandImageScroll = ({urls} : PIFace) => {
                     <CgArrowRight/>
                 </div>
             </div>
-            <div className={"expand-image-scroll-num"}>
-                <div className={"expand-current-img-number"}>
-                    {imgNum + 1}
-                </div>
-                <div className={"expand-slash"}>
-                    /
-                </div>
-                <div className={"expand-last-img-number"}>
-                    {urls.length}
-                </div>
+            <div className={"expand-image-close-button"} onClick={onClickClose}>
+                <CgClose/>
             </div>
         </div>
     )

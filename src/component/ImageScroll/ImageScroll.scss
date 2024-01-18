@@ -35,6 +35,12 @@ $image-height : $image-width * (6 / 9);
       opacity: 0.8;
 
       border-radius: 1rem;
+
+      transition: padding 0.3s, opacity 0.3s;
+      &:hover{
+        padding : 1.3rem;
+        opacity: 1;
+      }
     }
     .image-next{
       display: flex;
@@ -44,6 +50,12 @@ $image-height : $image-width * (6 / 9);
       opacity: 0.8;
 
       border-radius: 1rem;
+
+      transition: padding 0.3s, opacity 0.3s;
+      &:hover{
+        padding : 1.3rem;
+        opacity: 1;
+      }
     }
   }
 
