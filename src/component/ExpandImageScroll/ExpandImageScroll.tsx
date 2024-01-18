@@ -1,12 +1,13 @@
 import React, {useCallback, useState} from "react";
 import './ExpandImageScroll.scss';
-import {CgArrowLeft, CgArrowRight} from "react-icons/cg";
+import {CgArrowLeft, CgArrowRight, CgClose} from "react-icons/cg";
 
 interface PIFace{
-    urls : string[]
+    urls : string[];
+    onClickClose : () => void;
 }
 
-const ExpandImageScroll = ({urls} : PIFace) => {
+const ExpandImageScroll = ({urls, onClickClose} : PIFace) => {
     const [imgNum, setImgNum] = useState<number>(0);
 
     const imagePrevious = useCallback(() => {
@@ -41,6 +42,9 @@ const ExpandImageScroll = ({urls} : PIFace) => {
                 <div className={"expand-image-next"} onClick={imageNext}>
                     <CgArrowRight/>
                 </div>
+            </div>
+            <div className={"expand-image-close-button"} onClick={onClickClose}>
+                <CgClose/>
             </div>
         </div>
     )

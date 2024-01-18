@@ -31,20 +31,31 @@
       top : 0%;
       left : 0%;
       width: 100%;
-      height: 100%;
+      height: 120%;
       z-index: 1000;
-      background: #555555;
+      padding-top: 2rem;
+
+      background: rgba(0, 0, 0, 0.7);
 
       transition: opacity 0.5s;
 
       &.expand{
         display: flex;
-        flex-direction: row;
         justify-content: center;
-        align-items: center;
         opacity: 1;
+        animation: transOpacity 0.5s ease-in-out;
       }
 
+      @keyframes transOpacity {
+        from {
+          transform: translateY(-5rem);
+          opacity: 0;
+        }
+        to{
+          transform : translateY(0);
+          opacity: 1;
+        }
+      }
     }
 
     .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
@@ -66,7 +77,18 @@
       }
 
       .image-expand-icon{
-        font-size: 6rem;
+        display: flex;
+        margin-top: 2rem;
+        font-size: 4rem;
+        padding : 1rem;
+        background: rgba(100, 100, 100, 0.5);
+        border-radius: 1rem;
+
+        transition: font-size 0.5s;
+
+        &:hover{
+          font-size: 6rem;
+        }
       }
 
     }
