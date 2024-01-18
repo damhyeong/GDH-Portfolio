@@ -5,6 +5,13 @@ html{
   overflow-x: clip;
 }
 
+@media screen and (max-width: 768px) {
+  img, video {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
 .App{
   display: flex;
   flex-direction: column;
