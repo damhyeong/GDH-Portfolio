@@ -45,7 +45,7 @@ const Main: React.FC = () => {
     }, []);
 
     return (
-        true ?
+         loadingBackground  ?
             (<div className={"main-component"} style={{backgroundColor : "black"}}>
                 <div className={"loading-text"}>
                     Loading...
