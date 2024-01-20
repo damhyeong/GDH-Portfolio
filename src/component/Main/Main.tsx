@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import background from '/clean-sky-building.jpg';
+import {FaRegDotCircle} from "react-icons/fa";
 
 import "./Main.scss";
 
@@ -7,28 +7,65 @@ import "./Main.scss";
 const Main: React.FC = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const helloWorldRef = useRef<HTMLDivElement | null>(null);
+    const [backgroundImage, setBackgroundImage] = useState('');
+    const [loadingBackground, setLoadingBackground] = useState<boolean>(true);
 
-    const callbackFunction = (entries: IntersectionObserverEntry[]) => {
-        const [entry] = entries;
-        setIsVisible(entry.isIntersecting);
+    const loadImage = () => {
+        const image = new Image();
+        image.src = `${process.env.PUBLIC_URL}/clean-sky-building.png`;
+        image.onload = () => {
+            setBackgroundImage(image.src);
+            console.log("Image loaded");
+        };
+        setLoadingBackground(false);
     };
 
+    // 컴포넌트가 마운트될 때 이미지를 로드합니다.
     useEffect(() => {
-        const observer = new IntersectionObserver(callbackFunction, {
-            root: null,
-            threshold: 0.8  // 10%가 보일 때 애니메이션을 트리거합니다.
+        loadImage();
+    }, []);
+
+    useEffect(() => {
+        const mainViewComponent = document.querySelectorAll(".main-component")
+
+        const mainObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                setIsVisible(true);
+            })
+        }, {
+            threshold: 0.5
+
         });
 
-        if (helloWorldRef.current) observer.observe(helloWorldRef.current);
+        mainViewComponent.forEach(mainView => {
+            mainObserver.observe(mainView)
+        })
 
-        return () => {
-            if (helloWorldRef.current) observer.unobserve(helloWorldRef.current);
-        };
+
     }, []);
 
     return (
-        <div className="main-component"
-             style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/clean-sky-building.png'})` }}
+        true ?
+            (<div className={"main-component"} style={{backgroundColor : "black"}}>
+                <div className={"loading-text"}>
+                    Loading...
+                </div>
+                <div className={"loading-circles"}>
+                    <div className={"odd-circle"}>
+                        <FaRegDotCircle/>
+                    </div>
+                    <div className={"even-circle"}>
+                        <FaRegDotCircle/>
+                    </div>
+                    <div className={"odd-circle"}>
+                        <FaRegDotCircle/>
+                    </div>
+                </div>
+            </div>) :
+
+        (<div className={`main-component`}
+             style={{ backgroundImage: `url(${backgroundImage})` }}
+             onLoad={() => console.log("complete")}
         >
             <div
                 className={`hello-world ${isVisible ? "fade-in" : "fade-out"}`}
@@ -47,7 +84,7 @@ const Main: React.FC = () => {
                     코드로서 풀이하고자 노력합니다.
                 </div>
             </div>
-        </div>
+        </div>)
     );
 };
 
