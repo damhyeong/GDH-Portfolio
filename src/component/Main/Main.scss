@@ -1,93 +1,180 @@
-.main-component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70rem;
-  color: #eeeeee;
+@import "../../scss-base/mixin_media";
 
-  background-position: center; /* 이미지를 중앙에 배치 */
-  background-size: cover; /* 이미지가 컨테이너를 채우도록 조절 */
-  background-repeat: no-repeat; /* 이미지 반복 방지 */
-
-  &:before {
-    content: ''; /* 의사 요소는 content 속성 필요 */
-    position: absolute; /* 부모 대비 절대 위치 */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* 검은색 오버레이, 투명도 조절 */
-    z-index: 1; /* 이미지 위에 오도록 z-index 설정 */
-  }
-
-  /* 나머지 컨텐츠는 오버레이 위에 표시되도록 z-index 설정 */
-  > * {
-    position: relative;
-    z-index: 2;
-  }
-
-  .hello-world{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10rem;
-    text-shadow: 2px 2px 10px;
-    padding-bottom: 3rem;
-
-    &.fade-in {
-      animation: puffIn 1s;
-    }
-    &.fade-out{
-      animation: puffOut 1s;
-    }
-
-  }
-
-  .hello-world-korean{
+@include desktop() {
+  .main-component{
     display: flex;
     flex-direction: column;
-    padding-top: 2rem;
-    justify-content: space-between;
-    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70rem;
+    color: #eeeeee;
 
-    &.fade-in {
-      animation: puffIn 1s;
-    }
-    &.fade-out{
-      animation: puffOut 1s;
+    background-position: center; /* 이미지를 중앙에 배치 */
+    background-size: cover; /* 이미지가 컨테이너를 채우도록 조절 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+
+    > * {
+      position: relative;
+      z-index: 2;
     }
 
-    .korean-text-1{
-      font-size: 3rem;
-      padding-bottom: 2rem;
-    }
-    .korean-text-2{
-      font-size: 3rem;
-    }
-  }
+    .hello-world{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10rem;
+      text-shadow: 2px 2px 10px;
+      padding-bottom: 3rem;
 
-  // Loading 디자인
-  .loading-text{
-    font-size : 6rem;
-    margin-bottom: 10rem;
-  }
-  .loading-circles{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 30rem;
+      &.fade-in {
+        animation: puffIn 1s;
+      }
+      &.fade-out{
+        animation: puffOut 1s;
+      }
 
-    font-size: 5rem;
-    .odd-circle{
-      animation: odd-circle-move infinite 3s ease-in-out forwards;
     }
-    .even-circle{
-      animation: even-circle-move infinite 3s ease-in-out forwards;
+
+    .hello-world-korean{
+      display: flex;
+      flex-direction: column;
+      padding-top: 2rem;
+      justify-content: space-between;
+      font-weight: bolder;
+
+      &.fade-in {
+        animation: puffIn 1s;
+      }
+      &.fade-out{
+        animation: puffOut 1s;
+      }
+
+      .korean-text-1{
+        font-size: 3rem;
+        padding-bottom: 2rem;
+      }
+      .korean-text-2{
+        font-size: 3rem;
+      }
+    }
+
+    // Loading 디자인
+    .loading-text{
+      font-size : 6rem;
+      margin-bottom: 10rem;
+    }
+    .loading-circles{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 30rem;
+
+      font-size: 5rem;
+      .odd-circle{
+        animation: odd-circle-move infinite 3s ease-in-out forwards;
+      }
+      .even-circle{
+        animation: even-circle-move infinite 3s ease-in-out forwards;
+      }
     }
   }
 }
+
+@include mobile() {
+  .main-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40rem;
+    color: #eeeeee;
+
+
+    background-position: center; /* 이미지를 중앙에 배치 */
+    background-size: cover; /* 이미지가 컨테이너를 채우도록 조절 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+
+    /* 나머지 컨텐츠는 오버레이 위에 표시되도록 z-index 설정 */
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hello-world{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
+      text-shadow: 2px 2px 10px;
+      padding-bottom: 3rem;
+
+      &.fade-in {
+        animation: puffIn 1s;
+      }
+      &.fade-out{
+        animation: puffOut 1s;
+      }
+
+    }
+
+    .hello-world-korean{
+      display: flex;
+      flex-direction: column;
+      padding-top: 2rem;
+      justify-content: space-between;
+      font-weight: bolder;
+
+      &.fade-in {
+        animation: puffIn 1s;
+      }
+      &.fade-out{
+        animation: puffOut 1s;
+      }
+
+      .korean-text-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding : 10px;
+        margin-bottom: 10px;
+
+        font-size: 30px;
+      }
+      .korean-text-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding : 10px;
+        margin-bottom: 10px;
+
+        font-size: 25px;
+      }
+    }
+
+    // Loading 디자인
+    .loading-text{
+      font-size : 50px;
+      margin-bottom: 150px;
+    }
+    .loading-circles{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 300px;
+
+      font-size: 60px;
+      .odd-circle{
+        animation: odd-circle-move infinite 3s ease-in-out forwards;
+      }
+      .even-circle{
+        animation: even-circle-move infinite 3s ease-in-out forwards;
+      }
+    }
+  }
+}
+
 
 @keyframes odd-circle-move {
   0%{

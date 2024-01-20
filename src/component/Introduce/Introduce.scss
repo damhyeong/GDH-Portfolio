@@ -1,31 +1,58 @@
-// @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-//@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+@import "../../scss-base/mixin_media";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-.introduce-component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top : 10rem;
-  padding-bottom : 10rem;
-  font-family: 'Roboto', sans-serif;
+@include desktop() {
+  .introduce-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top : 10rem;
+    padding-bottom : 10rem;
+    font-family: 'Roboto', sans-serif;
 
 
-  .introduce-title{
-    font-size: 3rem;
-    font-weight: bold;
-    padding-bottom: 2rem;
+    .introduce-title{
+      font-size: 3rem;
+      font-weight: bold;
+      padding-bottom: 2rem;
+    }
+
+    hr{
+      width : 80%;
+    }
+
+    .introduce-information {
+      font-family: 'Pacifico', cursive;
+    }
   }
+}
+@include mobile() {
+  .introduce-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top : 90px;
+    padding-bottom : 90px;
+    font-family: 'Roboto', sans-serif;
 
-  hr{
-    width : 80%;
-  }
 
-  .introduce-information {
-    font-family: 'Pacifico', cursive;
+    .introduce-title{
+      font-size: 35px;
+      font-weight: bold;
+      padding-bottom: 25px;
+    }
+
+    hr{
+      width : 80%;
+    }
+
+    .introduce-information {
+      font-family: 'Pacifico', cursive;
+    }
   }
 }

@@ -1,72 +1,133 @@
+@import "scss-base/mixin_media";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 html{
   scroll-behavior: smooth;
   overflow-x: clip;
 }
 
-@media screen and (max-width: 768px) {
-  img, video {
-    max-width: 90%;
-    height: auto;
-  }
-}
-
-.App{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color : #eeeeee;
-  color: black;
-
-  .header{
-    position: fixed;
+@include desktop() {
+  .App{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    top: 0;
-    left: 0;
+    flex-direction: column;
     width: 100%;
-    z-index: 1000; // 맨 위에 있을 수 있게 만든다.
-    background: none;
+    background-color : #eeeeee;
+    color: black;
 
-    // background-color: #f8f9fa; // 배경색
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); // 상단에 그림자 효과
-
-    transition: background-color 0.5s;
-
-    &.not-top {
-      background: #eeeeee;
-    }
-
-    .logo{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-
-      font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-    }
-    .navi{
+    .header{
+      position: fixed;
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
+      justify-content: space-between;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; // 맨 위에 있을 수 있게 만든다.
+      background: none;
 
+      // background-color: #f8f9fa; // 배경색
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); // 상단에 그림자 효과
 
-      .nav {
-        font-size: 1.5rem;
+      transition: background-color 0.5s;
+
+      &.not-top {
+        background: #eeeeee;
+      }
+
+      .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1rem;
-        border-radius: 1rem;
 
-        transition: all 0.3s;
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+      }
+      .navi{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
 
-        &:hover {
-          box-shadow: #555555 0 0 1rem;
+
+        .nav {
+          font-size: 1.5rem;
+          padding: 1rem;
+          border-radius: 1rem;
+
+          transition: all 0.3s;
+
+          &:hover {
+            box-shadow: #555555 0 0 1rem;
+          }
         }
       }
     }
   }
 }
+
+@include mobile() {
+  .App{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color : #eeeeee;
+    color: black;
+
+    .header{
+      position: sticky;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000; // 맨 위에 있을 수 있게 만든다.
+      background: none;
+
+      // background-color: #f8f9fa; // 배경색
+
+      transition: background-color 0.5s;
+
+      &.not-top {
+        background: #eeeeee;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .logo{ // 모바일 환경에서는 nav를 위해 없앴다.
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+      }
+      .navi{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        padding-inline: 6px;
+
+        .nav {
+          font-size: 15px;
+          padding: 1rem;
+          border-radius: 1rem;
+
+          transition: all 0.3s;
+
+          &:hover {
+            box-shadow: #555555 0 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
+

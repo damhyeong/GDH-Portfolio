@@ -1,0 +1,19 @@
+@import './variables';
+
+@mixin mobile () {
+  @media (max-width: #{$breakpoint-tablet - 1}) { // 태블릿 기준 너비보다 작다면 모바일화.
+    @content;
+  }
+}
+
+@mixin tablet () {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1}) { // 태블릿 최소 너비 기준과 데스크톱 최소 너비 기준 사이라면 태블릿화.
+    @content;
+  }
+}
+
+@mixin desktop () {
+  @media (min-width: #{$breakpoint-desktop}) { // 데스크톱 최소 너비 기준보다 크다면 데스크톱화.
+    @content;
+  }
+}
