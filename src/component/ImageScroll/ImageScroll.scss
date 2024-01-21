@@ -1,84 +1,168 @@
+@import "../../scss-base/mixin_media";
 
 $image-width : 45rem;
 $image-height : $image-width * (6 / 9);
 
+@include desktop() {
 
-.image-scroll-component{
-  width: $image-width;
-  height: $image-height;
+  .image-scroll-component{
+    width: $image-width;
+    height: $image-height;
 
 
-  .image-view{
-    opacity: 0.9;
-    border-radius: 2rem;
-    box-shadow: 0.2rem 0.2rem 1rem;
-  }
+    .image-view{
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 2rem;
+      box-shadow: 0.2rem 0.2rem 1rem;
+    }
 
-  .image-scroller{
-    width: inherit;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    // top : 12rem;
-    top : $image-height / 2;
-    color: #222222;
-
-    font-size: 2rem;
-    .image-pre{
+    .image-scroller{
+      width: inherit;
+      position: absolute;
       display: flex;
-      padding: 1rem;
+      flex-direction: row;
 
-      background: #555555;
-      opacity: 0.8;
+      justify-content: space-between;
 
-      border-radius: 1rem;
+      // top : 12rem;
+      top : $image-height / 2;
+      color: #222222;
 
-      transition: padding 0.3s, opacity 0.3s;
-      &:hover{
-        padding : 1.3rem;
-        opacity: 1;
+      font-size: 2rem;
+      .image-pre{
+        display: flex;
+        padding: 1rem;
+
+        background: #555555;
+        opacity: 0.8;
+
+        border-radius: 1rem;
+
+        transition: padding 0.3s, opacity 0.3s;
+        &:hover{
+          padding : 1.3rem;
+          opacity: 1;
+        }
+      }
+      .image-next{
+        display: flex;
+        padding: 1rem;
+
+        background: #555555;
+        opacity: 0.8;
+
+        border-radius: 1rem;
+
+        transition: padding 0.3s, opacity 0.3s;
+        &:hover{
+          padding : 1.3rem;
+          opacity: 1;
+        }
       }
     }
-    .image-next{
+
+    .image-scroll-num{
       display: flex;
-      padding: 1rem;
+      flex-direction: row;
+      position: absolute;
+      color: #222222;
+      top: $image-height - ($image-height / 10rem);
+      left: $image-width / 2;
 
-      background: #555555;
-      opacity: 0.8;
+      font-size: ($image-height / 15);
 
-      border-radius: 1rem;
 
-      transition: padding 0.3s, opacity 0.3s;
-      &:hover{
-        padding : 1.3rem;
-        opacity: 1;
+      transition: all 0.3s;
+      .current-img-number{
+
+      }
+      .slash{
+
+      }
+      .last-img-number{
+
       }
     }
   }
+}
 
-  .image-scroll-num{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    color: #222222;
-    top: $image-height - ($image-height / 10rem);
-    left: $image-width / 2;
+@include mobile() {
+  $mobile-img-width : 350px;
+  .image-scroll-component{
+    width: $mobile-img-width;
 
-    font-size: ($image-height / 15);
-
-
-    transition: all 0.3s;
-    .current-img-number{
-
+    .image-view{
+      width: 100%;
+      opacity: 0.9;
+      border-radius: 2rem;
+      box-shadow: 0.2rem 0.2rem 1rem;
     }
-    .slash{
 
+    .image-scroller{
+      width: inherit;
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+
+      // top : 12rem;
+      color: #222222;
+
+      font-size: 2rem;
+      .image-pre{
+        display: flex;
+        padding: 1rem;
+
+        background: #555555;
+        opacity: 0.8;
+
+        border-radius: 1rem;
+
+        transition: padding 0.3s, opacity 0.3s;
+        &:hover{
+          padding : 1.3rem;
+          opacity: 1;
+        }
+      }
+      .image-next{
+        display: flex;
+        padding: 1rem;
+
+        background: #555555;
+        opacity: 0.8;
+
+        border-radius: 1rem;
+
+        transition: padding 0.3s, opacity 0.3s;
+        &:hover{
+          padding : 1.3rem;
+          opacity: 1;
+        }
+      }
     }
-    .last-img-number{
 
+    .image-scroll-num{
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      color: #222222;
+      top: $image-height - ($image-height / 10rem);
+      left: $image-width / 2;
+
+      font-size: ($image-height / 15);
+
+
+      transition: all 0.3s;
+      .current-img-number{
+
+      }
+      .slash{
+
+      }
+      .last-img-number{
+
+      }
     }
   }
 }
