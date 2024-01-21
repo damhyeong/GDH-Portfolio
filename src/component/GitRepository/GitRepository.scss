@@ -1,0 +1,113 @@
+@import "../../scss-base/mixin_media";
+
+@include desktop() {
+  .git-repository-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 5rem;
+
+    .git-component-title{
+      padding : 3rem;
+
+      .git-component-text{
+        font-weight: bolder;
+        font-size: 4rem;
+      }
+      hr{
+
+      }
+    }
+
+    .git-repository-container{
+      display: flex;
+      flex-direction: column;
+
+      .github-img-a{ // <img>태그
+        display: flex;
+        width: 30rem;
+        .github-img{
+          width: inherit; // 모바일 스타일 제작 시 용이 위함.
+
+          border-radius: 2rem;
+
+          transition: background-color 0.3s;
+
+          &:hover{
+            background-color: rgba(150, 150, 150, 0.9);
+          }
+        }
+        .github-img-hover{ // hover 시, Github link로 가게 만들기 위함.
+          display: none;
+          width: inherit;
+        }
+      }
+      .git-repository-url{
+        .github-link{ // <a> 태그이다.
+
+        }
+      }
+      .git-repository-introduce{
+
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .git-repository-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 50px;
+
+    .git-component-title{
+      padding : 3rem;
+
+      .git-component-text{
+        font-weight: bolder;
+        font-size: 4rem;
+      }
+      hr{
+        width: 100%;
+      }
+    }
+
+    .git-repository-container{
+      display: flex;
+      flex-direction: column;
+
+      .github-img-a{ // <img>태그
+        display: flex;
+        width: 30rem;
+        .github-img{
+          width: inherit; // 모바일 스타일 제작 시 용이 위함.
+
+          border-radius: 2rem;
+
+          transition: background-color 0.3s;
+
+          &:hover{
+            background-color: rgba(150, 150, 150, 0.9);
+          }
+        }
+        .github-img-hover{ // hover 시, Github link로 가게 만들기 위함.
+          display: none;
+          width: inherit;
+        }
+      }
+      .git-repository-url{
+        .github-link{ // <a> 태그이다.
+
+        }
+      }
+      .git-repository-introduce{
+
+      }
+    }
+  }
+}
