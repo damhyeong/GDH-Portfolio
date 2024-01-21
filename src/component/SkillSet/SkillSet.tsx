@@ -275,7 +275,7 @@ const SkillSet = () => {
                         </div>
                         <div className={"skill-section-component"}>
                             <div className={"section-title"}>
-                                {"Editor"}
+                                {"Certificate"}
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>

@@ -92,6 +92,7 @@ $back-color : #9adcfc;
     }
   }
 }
+
 @include mobile() {
 
   .skill-set-component{
@@ -125,11 +126,11 @@ $back-color : #9adcfc;
       }
       .skill-sections{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         .skill-section{
           display: flex;
           flex-direction: column;
-          padding: 2rem; // 추후, Front-End와 같은 영역 또한 포함시키려면, 여기에 background, padding을 더 추가하면 된다.
+          padding: 1rem; // 추후, Front-End와 같은 영역 또한 포함시키려면, 여기에 background, padding을 더 추가하면 된다.
         }
       }
     }
@@ -140,12 +141,12 @@ $back-color : #9adcfc;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding : 2rem;
+    padding : 1rem;
 
 
 
     .section-title{
-      padding : 2rem;
+      padding : 1rem;
       font-size: 3rem;
     }
     .skill-line{
@@ -153,7 +154,7 @@ $back-color : #9adcfc;
       flex-direction: column;
       align-items: center;
 
-      padding: 3rem;
+      padding: 1rem;
       background-color: #eee; // 임시 배경 색 -> 나중에 통일
 
       border-radius: 1rem;
