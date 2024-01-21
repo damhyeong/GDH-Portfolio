@@ -115,7 +115,7 @@ const Project = () => {
                     </div>
                 </div>
                 <div className={`project-introduce`}>
-                    <div className={"title-section"} style={{fontSize : "4rem"}}>
+                    <div className={"title-section"} >
                         기업의 보안 미비성 수정 제안
                     </div>
                     <hr/>
@@ -150,11 +150,6 @@ const Project = () => {
                     <img
                         alt={"portfolio-main.png"}
                         src={process.env.PUBLIC_URL + "/project-src/portfolio-main.png"}
-                        style={
-                            {width : "50rem", borderRadius : "2rem", boxShadow : "white 2px 2px 10px"}
-                        }
-                        loading={"lazy"}
-                        onLoad={() => console.log("compelete png")}
                     />
                 </div>
                 <div className={`project-introduce`}>

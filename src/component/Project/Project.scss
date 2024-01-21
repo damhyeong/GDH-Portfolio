@@ -94,6 +94,11 @@
           }
         }
 
+        img{
+          width : 50rem;
+          border-radius : 2rem;
+          box-shadow : white 2px 2px 10px;
+        }
       }
       .project-introduce{ // 프로젝트 설명 부분
         display: flex;
@@ -208,6 +213,9 @@
           opacity: 1;
           transform: translateX(0);
 
+        }
+        img{
+          width: 350px;
         }
 
         .image-expand-icon{
