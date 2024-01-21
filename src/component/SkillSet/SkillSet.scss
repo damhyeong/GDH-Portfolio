@@ -1,88 +1,181 @@
+@import "../../scss-base/mixin_media";
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 $base-color : black;
 $back-color : #9adcfc;
 
-.skill-set-component{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem;
+@include desktop() {
 
-  background: $base-color;
-  color : $back-color;
-  transition-duration: 0.3s;
+  .skill-set-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
 
-  &.active{
-    background: $back-color;
-    color : $base-color;
+    background: $base-color;
+    color : $back-color;
+    transition-duration: 0.3s;
+
+    &.active{
+      background: $back-color;
+      color : $base-color;
+    }
+
+    .skill-set{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .skill-set-title{
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bolder;
+      }
+      hr{
+        width: 20rem;
+      }
+      .skill-sections{
+        display: flex;
+        flex-direction: row;
+        .skill-section{
+          display: flex;
+          flex-direction: column;
+          padding: 2rem; // 추후, Front-End와 같은 영역 또한 포함시키려면, 여기에 background, padding을 더 추가하면 된다.
+        }
+      }
+    }
   }
 
-  .skill-set{
+  .skill-section-component{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding : 2rem;
 
-    .skill-set-title{
-      font-size: 4rem;
-      font-family: 'Roboto', sans-serif;
-      font-weight: bolder;
+
+
+    .section-title{
+      padding : 2rem;
+      font-size: 3rem;
     }
-    hr{
-      width: 20rem;
-    }
-    .skill-sections{
+    .skill-line{
       display: flex;
-      flex-direction: row;
-      .skill-section{
+      flex-direction: column;
+      align-items: center;
+
+      padding: 3rem;
+      background-color: #eee; // 임시 배경 색 -> 나중에 통일
+
+      border-radius: 1rem;
+
+      .skill-cell{
         display: flex;
-        flex-direction: column;
-        padding: 2rem; // 추후, Front-End와 같은 영역 또한 포함시키려면, 여기에 background, padding을 더 추가하면 된다.
+        flex-direction: row;
+        align-items: center;
+        padding : 1rem;
+        border-radius: 1rem;
+
+        transition: all 0.3s;
+
+        .icon-img{
+          padding: 0.5rem;
+        }
+
+        &:hover{
+          box-shadow: gray 2px 2px 10px;
+          margin: 1rem;
+        }
       }
     }
   }
 }
 
-.skill-section-component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding : 2rem;
+@include mobile() {
 
+  .skill-set-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
 
+    background: $base-color;
+    color : $back-color;
+    transition-duration: 0.3s;
 
-  .section-title{
-    padding : 2rem;
-    font-size: 3rem;
+    &.active{
+      background: $back-color;
+      color : $base-color;
+    }
+
+    .skill-set{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .skill-set-title{
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bolder;
+      }
+      hr{
+        width: 20rem;
+      }
+      .skill-sections{
+        display: flex;
+        flex-direction: column;
+        .skill-section{
+          display: flex;
+          flex-direction: column;
+          padding: 1rem; // 추후, Front-End와 같은 영역 또한 포함시키려면, 여기에 background, padding을 더 추가하면 된다.
+        }
+      }
+    }
   }
-  .skill-line{
+
+  .skill-section-component{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding : 1rem;
 
-    padding: 3rem;
-    background-color: #eee; // 임시 배경 색 -> 나중에 통일
 
-    border-radius: 1rem;
 
-    .skill-cell{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+    .section-title{
       padding : 1rem;
+      font-size: 3rem;
+    }
+    .skill-line{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 1rem;
+      background-color: #eee; // 임시 배경 색 -> 나중에 통일
+
       border-radius: 1rem;
 
-      transition: all 0.3s;
+      .skill-cell{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding : 1rem;
+        border-radius: 1rem;
 
-      .icon-img{
-        padding: 0.5rem;
-      }
+        transition: all 0.3s;
 
-      &:hover{
-        box-shadow: gray 2px 2px 10px;
-        margin: 1rem;
+        .icon-img{
+          padding: 0.5rem;
+        }
+
+        &:hover{
+          box-shadow: gray 2px 2px 10px;
+          margin: 1rem;
+        }
       }
     }
   }

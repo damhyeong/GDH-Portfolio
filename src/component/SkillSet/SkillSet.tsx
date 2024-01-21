@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import './SkillSet.scss'
+import {getEnvironmentData} from "worker_threads";
 // import SkillSection from "./SkillSection/SkillSection";
 
 interface iconInfo{
@@ -274,7 +275,7 @@ const SkillSet = () => {
                         </div>
                         <div className={"skill-section-component"}>
                             <div className={"section-title"}>
-                                {"Editor"}
+                                {"Certificate"}
                             </div>
                             <div className={"skill-line"} style={skillLineStyle}>
                                 <div className={"skill-cell"}>
