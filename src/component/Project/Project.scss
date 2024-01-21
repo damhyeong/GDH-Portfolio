@@ -1,134 +1,262 @@
-.project-component{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  position: relative;
+@import "../../scss-base/mixin_media";
 
-  background: #eee;
-  color : #222;
-
-  transition: all 0.3s;
-
-  &.active{
-    background: #222;
-    color: #eee;
-  }
-
-  .project-wrapper{
+@include desktop() {
+  .project-component{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 3rem;
+    position: relative;
 
-    width: 100rem;
-    height: 70rem;
+    background: #eee;
+    color : #222;
 
-    .image-viewer{
-      opacity: 0;
-      display: none;
-      position: fixed;
-      top : 0%;
-      left : 0%;
-      width: 100%;
-      height: 120%;
-      z-index: 1000;
-      padding-top: 2rem;
+    transition: all 0.3s;
 
-      background: rgba(0, 0, 0, 0.7);
-
-      transition: opacity 0.5s;
-
-      &.expand{
-        display: flex;
-        justify-content: center;
-        opacity: 1;
-        animation: transOpacity 0.5s ease-in-out;
-      }
-
-      @keyframes transOpacity {
-        from {
-          transform: translateY(-5rem);
-          opacity: 0;
-        }
-        to{
-          transform : translateY(0);
-          opacity: 1;
-        }
-      }
+    &.active{
+      background: #222;
+      color: #eee;
     }
 
-    .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
+    .project-wrapper{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      width: 45rem;
 
-      opacity: 0;
-      transform: translateX(-10rem);
+      width: 100rem;
+      height: 70rem;
 
-      transition: opacity 0.5s ease-in, transform 0.5s ease;
-
-
-      &.active-move{
-        opacity: 1;
-        transform: translateX(0);
-
-      }
-
-      .image-expand-icon{
-        display: flex;
-        margin-top: 2rem;
-        font-size: 4rem;
-        padding : 1rem;
-        background: rgba(100, 100, 100, 0.5);
-        border-radius: 1rem;
-
-        transition: font-size 0.5s;
-
-        &:hover{
-          font-size: 6rem;
-        }
-      }
-
-    }
-    .project-introduce{ // 프로젝트 설명 부분
-      display: flex;
-      flex-direction: column;
-
-      align-items: center;
-      padding-left: 7rem;
-
-      opacity: 0;
-      transform: translateX(10rem);
-      transition-delay: 1s;
-      transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
-
-
-      &.active-move{
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .title-section{
-        font-size: 5rem;
-      }
-
-      hr{
+      .image-viewer{
+        opacity: 0;
+        display: none;
+        position: fixed;
+        top : 0%;
+        left : 0%;
         width: 100%;
-        line-height: 4px;
+        height: 120%;
+        z-index: 1000;
+        padding-top: 2rem;
+
+        background: rgba(0, 0, 0, 0.7);
+
+        transition: opacity 0.5s;
+
+        &.expand{
+          display: flex;
+          justify-content: center;
+          opacity: 1;
+          animation: transOpacity 0.5s ease-in-out;
+        }
+
+        @keyframes transOpacity {
+          from {
+            transform: translateY(-5rem);
+            opacity: 0;
+          }
+          to{
+            transform : translateY(0);
+            opacity: 1;
+          }
+        }
       }
 
-      .introduce-section{
-        font-size: 1.5rem;
+      .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45rem;
+
+        opacity: 0;
+        transform: translateX(-10rem);
+
+        transition: opacity 0.5s ease-in, transform 0.5s ease;
+
+
+        &.active-move{
+          opacity: 1;
+          transform: translateX(0);
+
+        }
+
+        .image-expand-icon{
+          display: flex;
+          margin-top: 2rem;
+          font-size: 4rem;
+          padding : 1rem;
+          background: rgba(100, 100, 100, 0.5);
+          border-radius: 1rem;
+
+          transition: font-size 0.5s;
+
+          &:hover{
+            font-size: 6rem;
+          }
+        }
+
+      }
+      .project-introduce{ // 프로젝트 설명 부분
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        padding-left: 7rem;
+
+        opacity: 0;
+        transform: translateX(10rem);
+        transition-delay: 1s;
+        transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+
+
+        &.active-move{
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .title-section{
+          font-size: 5rem;
+        }
+
+        hr{
+          width: 100%;
+          line-height: 4px;
+        }
+
+        .introduce-section{
+          font-size: 1.5rem;
+        }
       }
     }
   }
+}
 
-  // 20% 진입 시,
-  /*
-  background: #222222;
-  color: #eeeeee;
-  */
+@include mobile() {
+  .project-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
 
+    background: #eee;
+    color : #222;
+
+    transition: all 0.3s;
+
+    &.active{
+      background: #222;
+      color: #eee;
+    }
+
+    .project-wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      max-width: 100%;
+      padding-bottom: 50px;
+
+      .image-viewer{
+        opacity: 0;
+        display: none;
+        position: fixed;
+        top : 0%;
+        left : 0%;
+        width: 100%;
+        height: 120%;
+        z-index: 1000;
+        padding-top: 2rem;
+
+        background: rgba(0, 0, 0, 0.7);
+
+        transition: opacity 0.5s;
+
+        &.expand{
+          display: flex;
+          justify-content: center;
+          opacity: 1;
+          animation: transOpacity 0.5s ease-in-out;
+        }
+
+        @keyframes transOpacity {
+          from {
+            transform: translateY(-5rem);
+            opacity: 0;
+          }
+          to{
+            transform : translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+
+      .project-view-src{ // 프로젝트를 상징하는 이미지 혹은 gif player를 담고 있는 경우.
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        padding-bottom: 30px;
+
+        opacity: 0;
+        transform: translateX(-10rem);
+
+        transition: opacity 0.5s ease-in, transform 0.5s ease;
+
+
+        &.active-move{
+          opacity: 1;
+          transform: translateX(0);
+
+        }
+
+        .image-expand-icon{
+          display: none; // 모바일 환경은 확대 기능을 제공하지 말자. 어짜피 100%에 가까움.
+          margin-top: 2rem;
+          font-size: 4rem;
+          padding : 1rem;
+          background: rgba(100, 100, 100, 0.5);
+          border-radius: 1rem;
+
+          transition: font-size 0.5s;
+
+          &:hover{
+            font-size: 6rem;
+          }
+        }
+
+      }
+      .project-introduce{ // 프로젝트 설명 부분
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        opacity: 0;
+        transform: translateX(100px);
+        transition-delay: 1s;
+        transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+
+        max-width: 100%;
+
+        &.active-move{
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .title-section{
+          font-size: 50px;
+        }
+
+        hr{
+          width: 100%;
+          line-height: 4px;
+        }
+
+        .introduce-section{
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
