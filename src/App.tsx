@@ -4,6 +4,7 @@ import Main from "./component/Main/Main";
 import Introduce from "./component/Introduce/Introduce";
 import SkillSet from "./component/SkillSet/SkillSet";
 import Project from "./component/Project/Project";
+import GitRepository from "./component/GitRepository/GitRepository";
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
         </div>
         <div id={"SkillSet"}>
             <SkillSet/>
+        </div>
+        <div id={"Git"}>
+            <GitRepository/>
         </div>
         <div id={"Project"}>
             <Project/>

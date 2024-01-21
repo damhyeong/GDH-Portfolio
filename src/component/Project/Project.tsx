@@ -70,6 +70,12 @@ const Project = () => {
 
     return (
         <div ref={elementRef} className={`project-component ${isActive ? "active" : ""}`}>
+            <div className={"project-component-title"}>
+                <div className={"project-component-text"}>
+                    Projects
+                </div>
+                <hr/>
+            </div>
             <div className={`project-wrapper`}>
                 <div className={`project-view-src`}>
                     <GifPlayer
@@ -80,7 +86,7 @@ const Project = () => {
                 </div>
                 <div className={`project-introduce`} style={{width : "40rem"}}>
                     <div className={"title-section"}>
-                        Vibe-Flash
+                        Aura-Beat
                     </div>
                     <hr/>
                     <div className={"introduce-section"}>
@@ -95,7 +101,12 @@ const Project = () => {
 
                         이를 극복하기 위해 SKScene, vDSP 라이브러리를 사용하여 애플워치에 사운드 반응형 어플리케이션을 제작 할 수 있었습니다.<br/><br/>
 
-                        vDSP 기능을 통해 Low Level 수준의 계산을 실행하여 계산량을 줄였으며, SKScene을 통해 그림을 그리는 것이 불가능했던 WatchOS의 한계를 없앴습니다.<br/>
+                        vDSP 기능을 통해 Low Level 수준의 계산을 실행하여 계산량을 줄였으며, SKScene을 통해 그림을 그리는 것이 불가능했던 WatchOS의 한계를 없앴습니다.<br/><br/>
+
+                        특히, 병렬 계산처리가 가능한 vDSP 기능을 이용해 평균 45% CPU 이용량을 15%까지 줄이며, 사용자가 손으로 화면을 Scroll 할 떄와 비슷한 계산 처리량까지 낮추었습니다.<br/><br/>
+
+                        병렬 계산처리와 더불어, Instrument 테스트 기능을 이용해 애플워치의 내장 마이크를 이용해 수신되는 소리 정보를 받기 위해 항상 새로운 배열을 만들기에 <br/>
+                        이를 바꾸어 프로그램의 실행과 동시에 배열을 새로 만들되, 소리 정보가 업데이트 될 때 마다 배열이 새로 만들어 지지 않도록 프로그램을 만들었습니다.<br/><br/>
                     </div>
                 </div>
             </div>
@@ -160,7 +171,19 @@ const Project = () => {
                     <div className={"introduce-section"}>
                         <b>React 프레임워크 기반의 Gifhub pages Hosting 정적 웹 페이지 제작 </b><br/><br/>
 
+                        취업을 위한 포트폴리오 제작에 PDF를 사용할 수 있었지만, 너무 정형화 된 방식이라고 생각했습니다.<br/><br/>
 
+                        실질적인 포트폴리오 역할을 할 수 있으면서, 배운 기술을 응용해서 쓸 수 있는 방식을 선택했습니다.<br/><br/>
+
+                        세부적인 컴포넌트를 작성 할 수 있는 React, 코드 작성과 디버깅에 용이 한 Typescript를 사용했습니다.<br/><br/>
+
+                        책을 공부 해 조금 응용하기에 바쁜 실력이었으나,<br/><br/>
+
+                        모바일과 데스크톱 두 환경에 맞는 디자인과 컴포넌트를 작성하는 과정에서 SCSS에 대한 이해도가 매우 증가했고,<br/><br/>
+
+                        Gif Player과 Image Expanding 등, 컴포넌트를 직접 만드는 과정에서 props와 state의 응용 실력이 늘어났습니다.<br/><br/>
+
+                        또한, 여태껏 만들어온 프로젝트의 진정한 의미에 대해서 다시 한번 고찰하게 되는 계기가 되어 좋은 시간이었습니다.
                     </div>
                 </div>
             </div>
