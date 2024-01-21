@@ -2,13 +2,13 @@
 $image-width : 45rem;
 $image-height : $image-width * (6 / 9);
 
+
 .image-scroll-component{
   width: $image-width;
   height: $image-height;
 
 
   .image-view{
-    width: 100%;
     opacity: 0.9;
     border-radius: 2rem;
     box-shadow: 0.2rem 0.2rem 1rem;
