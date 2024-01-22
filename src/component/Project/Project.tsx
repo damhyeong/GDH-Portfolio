@@ -169,7 +169,7 @@ const Project = () => {
                     </div>
                     <hr/>
                     <div className={"introduce-section"}>
-                        <b>React 프레임워크 기반의 Gifhub pages Hosting 정적 웹 페이지 제작 </b><br/><br/>
+                        <b>React 프레임워크 기반의 Github pages Hosting 정적 웹 페이지 제작 </b><br/><br/>
 
                         취업을 위한 포트폴리오 제작에 PDF를 사용할 수 있었지만, 너무 정형화 된 방식이라고 생각했습니다.<br/><br/>
 
