@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# 공담형의 포트폴리오
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 포트폴리오에 사용한 기술
 
-In the project directory, you can run:
+### 1. React
 
-### `npm start`
+### 2. Typescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 3. scss
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 4. 데스크탑과 모바일 두 개 모두 적용한 디자인 - mobile, desktop
 
-### `npm test`
+### 5. 직접 제작한 Gif 플레이어, 이미지 확대 뷰어 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 포트폴리오 요소의 조합 그래프
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```mermaid
+---
+title : 정적 요소와 동적 요소의 조합
+---
+flowchart TB
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Client("Client\n 들어온 유저들")
 
-### `npm run eject`
+Index("index.tsx")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+App("App.tsx\n 컴포넌트 조합")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+AppCss("App.scss")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Client -- 해당 페이지를 봄 --> Index
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Index --> App
 
-## Learn More
+AppCss --> App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Components("Components\n 컴포넌트 디렉토리")
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+App -- 조합할 컴포넌트를 불러오기 --> Components
+
+Components --> AboutMe("AboutMe.tsx\n AboutMe.scss")
+
+Components --> ExpandImageScroll("ExpandImageScroll.tsx\n ExpandImageScroll.scss")
+        
+Components --> GifPlayer("GifPlayer.tsx\n GifPlayer.scss")
+        
+Components --> GitRepository("GitRepository.tsx\n GitRepository.scss")
+
+Components --> Else("ImageScroll\nIntroduce\nMain\nProject\nSkillSet")
+```
+
+<br/>
+
+---
+
+## 아직 존재하는 문제 요소
+
+### 1. 페이지 랜딩 시 이미지의 해상도가 너무 높아 로딩이 걸리는 문제가 발생.
+
+### 2. GifPlayer 실행 시 다운로드가 되지 않아 잠깐동안 기다려야 하는 문제 
+
+### 3. 아직 부족한 프로젝트 수, 그리고 명확하지 않은 개발의 방향성 
+
+---
+
+## 이를 해결하기 위해 현재 하는 행동은?
+
+### 1. 현재 Hyperskill 기술 문서를 해독하며 인프라와 기본 기술을 숙달
+
+영어 문서를 번역하면 항상 같은 문장을 두세번 반복해서 읽어야 하기 때문에,
+
+생각보다 숙달이 잘됨
+
+### 2. Programmers 풀스택 부트캠프 진행중
+
+항상 혼자 공부해왔지만, 공부 방식과 더불어 팀 활동,
+
+그리고 수준높은 강의로 인해 현재까지 추상적으로 흩어져 있던 지식들이
+
+구체적으로 결합하는 현상이 정말 빈번하게 발생함 - 좋은 현상
+
